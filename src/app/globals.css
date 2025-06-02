@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--color-gray-450); /* Using CSS variable */
+  color: var(--color-dark-100); /* Using CSS variable */
+}
+
+:root {
+  --color-primary-50: #f7f4f0;
+  --color-primary-100: #e5ddd5;
+  --color-primary-200: #d0c3b6;
+  --color-primary-300: #baac9d;
+  --color-primary-400: #a68967;
+  --color-primary-500: #8c7050;
+  --color-primary-600: #6f563d;
+  --color-primary-700: #53402e;
+  --color-primary-800: #382a1d;
+  --color-primary-900: #1d150c;
+  --color-primary-950: #0f0b07;
+
+  --color-secondary-50: #f0f3f7;
+  --color-secondary-100: #d6dbe0;
+  --color-secondary-200: #bcc3c9;
+  --color-secondary-300: #a3aab2;
+  --color-secondary-400: #8b929b;
+  --color-secondary-500: #717882;
+  --color-secondary-600: #5a6068;
+  --color-secondary-700: #434950;
+  --color-secondary-800: #2c3136;
+  --color-secondary-900: #15191b;
+  --color-secondary-950: #0b0c0d;
+
+  --color-accent-50: #fef1ea;
+  --color-accent-100: #fde0d0;
+  --color-accent-200: #fbc9b2;
+  --color-accent-300: #f8b194;
+  --color-accent-400: #f59877;
+  --color-accent-500: #ed7c4e;
+  --color-accent-600: #c56138;
+  --color-accent-700: #9e4a2c;
+  --color-accent-800: #763520;
+  --color-accent-900: #4f2014;
+  --color-accent-950: #27100a;
+
+  --color-dark-100: #201812;
+  --color-dark-200: #2d221c;
+  --color-dark-300: #3a2d26;
+  --color-dark-400: #473930;
+  --color-dark-500: #54443a;
+  --color-dark-600: #614f44;
+  --color-dark-700: #6e5a4e;
+  --color-dark-800: #7b6558;
+  --color-dark-900: #887062;
+  --color-dark-950: #957b6c;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
 }
