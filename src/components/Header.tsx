@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="w-full bg-primary-950 text-white shadow-lg">
+    <header className="w-full bg-primary-200 text-white shadow-lg">
       {/* Promotional Banner */}
-      <div className="bg-accent-500 text-center py-2 text-sm bg-red-700 font-medium">
+      <div className=" text-center py-2 text-sm bg-red-600 font-medium">
         <p>🎉 Limited Time Offer: Get 20% off all plans! Use code ESPRESSO20 🎉</p>
       </div>
 
@@ -25,12 +25,12 @@ const Header = () => {
           <Link href="/about" className="hover:text-accent-300 transition-colors duration-200">About Us</Link>
           <Link href="/contact" className="hover:text-accent-300 transition-colors duration-200">Contact</Link>
           <a
-            href="https://panel.espressohost.xyz"
+            href="https://control.espressohost.xyz"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-accent-500 hover:bg-accent-600 text-primary-950 px-5 py-2 rounded-full font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
           >
-            Client Area
+            Control Panel
           </a>
         </div>
 

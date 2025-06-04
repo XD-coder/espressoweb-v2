@@ -7,7 +7,7 @@ const Plans = () => {
   return (
     <section className="py-20 bg-primary-50">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-primary-950 mb-6">Our Popular Plans</h2>
+        <h2 className="text-4xl font-bold text-primary-900 mb-6">Our Popular Plans</h2>
         <p className="text-xl text-primary-700 mb-12">
           Choose the perfect plan that fits your gaming needs.
         </p>
@@ -19,10 +19,10 @@ const Plans = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-t-4 border-accent-500 flex flex-col"
+              className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-t-4 border-accent-500 flex flex-col z-10 overflow-hidden relative"
             >
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-accent-500 text-red-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
+                <div className="absolute top-0 right-0 bg-accent-500 text-red-600 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
                   Popular
                 </div>
               )}
