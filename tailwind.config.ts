@@ -79,11 +79,17 @@ const config: Config = {
       animation: {
         'spin-slow': 'spin 3s linear infinite',
         'fade-in': 'fadeIn 1s ease-out',
+        'bg-pan': 'bg-pan 20s linear infinite',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        'bg-pan': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
       },
     },

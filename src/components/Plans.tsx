@@ -22,7 +22,7 @@ const Plans = () => {
               className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 border-t-4 border-accent-500 flex flex-col"
             >
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-accent-500 text-primary-950 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
+                <div className="absolute top-0 right-0 bg-accent-500 text-red-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
                   Popular
                 </div>
               )}

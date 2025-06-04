@@ -9,7 +9,7 @@ const Hero = () => {
       className="relative py-20 overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url('/hero-bg.png')` }}
     ><motion.div className="absolute top-0 left-1/6 transform -translate-x-1/2 z-20 t">
-          <Image src="/sign.png" alt="Hanging Sign" width={150} height={150} className="drop-shadow-lg" />
+          <Image src="/sign.png" alt="Hanging Sign" width={150} height={150} className="drop-shadow-lg transition-all duration-300" />
         </motion.div>
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between relative z-10">
@@ -29,13 +29,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
             <Link
               href="/plans"
-              className="bg-black px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg transform hover:scale-105"
+              className="bg-accent-500 hover:bg-accent-600 text-primary-950 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg transform hover:scale-105"
             >
               View Our Plans
             </Link>
             <Link
               href="/about"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-primary-950 transform hover:scale-105"
+              className="bg-transparent border-2 border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-primary-500 hover:text-white transform hover:scale-105"
             >
               Learn More
             </Link>

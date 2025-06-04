@@ -15,11 +15,11 @@ const Header = () => {
         <div className="flex items-center">
           <Link href="/" className="flex items-center fill-orange-900 space-x-2">
             <Image src="/coffee-bean.svg" alt="Espresso Hosting Logo" width={40} height={40} />
-            <span className="text-2xl font-bold">Espresso Hosting</span>
+            <span className="text-2xl text-black font-mono font-extrabold ">Espresso Hosting</span>
           </Link>
         </div>
 
-        <div className="hidden md:flex text-orange-900 items-center space-x-8">
+        <div className="hidden md:flex text-black font-semibold items-center space-x-8">
           <Link href="/" className="hover:text-accent-300 transition-colors duration-200">Home</Link>
           <Link href="/plans" className="hover:text-accent-300 transition-colors duration-200">Plans</Link>
           <Link href="/about" className="hover:text-accent-300 transition-colors duration-200">About Us</Link>
