@@ -2,8 +2,10 @@
 import { motion } from 'framer-motion';
 import { homePagePlans } from '../../data'; // Assuming data.tsx is in the root of my-app
 import { CheckCircleIcon } from '@heroicons/react/24/solid'; // Example icon
+import { useRouter } from 'next/navigation';
 
 const Plans = () => {
+  const router = useRouter();
   return (
     <section className="py-20 bg-primary-50">
       <div className="container mx-auto px-6 text-center">
@@ -40,8 +42,11 @@ const Plans = () => {
                   </li>
                 ))}
               </ul>
-              <button className="mt-auto bg-primary-800 hover:bg-primary-950 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-md transform hover:scale-105">
-                Get Started
+              <button
+                onClick={() => router.push(`/billing?plan=${plan.code}&catagory=Minecraft`)}
+                className="mt-auto bg-primary-800 hover:bg-primary-950 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-md transform hover:scale-105"
+              >
+                Order Now
               </button>
             </motion.div>
           ))}

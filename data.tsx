@@ -37,7 +37,8 @@ export const founders = [
         'DDoS Protection',
         '24/7 Support (Discord)'
       ],
-      icon: 'Coffee'
+      icon: 'Coffee',
+      code: 'mc_1'
     },
     {
       name: 'The Double Shot',
@@ -51,7 +52,8 @@ export const founders = [
         '24/7 Priority Support'
       ],
       icon: 'CoffeeIcon',
-      popular: true
+      popular: true,
+      code: 'mc_2'
     },
     {
       name: 'The Latte',
@@ -64,7 +66,8 @@ export const founders = [
         'DDoS Protection',
         '24/7 VIP Support'
       ],
-      icon: 'Coffee'
+      icon: 'Coffee',
+      code:'mc_3'
     }]
   
   export const gameCategories = [
@@ -82,7 +85,8 @@ export const founders = [
             'DDoS Protection',
             '24/7 Support (Discord)'
           ],
-          icon: 'Coffee'
+          icon: 'Coffee',
+          code: 'mc_1'
         },
         {
           name: 'The Double Shot',
@@ -96,7 +100,8 @@ export const founders = [
             '24/7 Priority Support'
           ],
           icon: 'CoffeeIcon',
-          popular: true
+          popular: true,
+          code: 'mc_2'
         },
         {
           name: 'The Latte',
@@ -109,7 +114,8 @@ export const founders = [
             'DDoS Protection',
             '24/7 VIP Support'
           ],
-          icon: 'Coffee'
+          icon: 'Coffee',
+          code:'mc_3'
         },
         {
           name: 'The Americano',
@@ -122,7 +128,8 @@ export const founders = [
             'DDoS Protection',
             '24/7 VIP Support'
           ],
-          icon: 'Coffee'
+          icon: 'Coffee',
+          code:'mc_4'
         },
         {
           name: 'The Frappuccino',
@@ -135,7 +142,8 @@ export const founders = [
             'DDoS Protection',
             '24/7 VIP Support'
           ],
-          icon: 'Coffee'
+          icon: 'Coffee',
+          code:'mc_5'
         }
       ]
     },
@@ -153,7 +161,8 @@ export const founders = [
             '99.5% Uptime',
             'Community Support'
           ],
-          icon: 'CoffeeIcon'
+          icon: 'CoffeeIcon',
+          code:'pybot_1'
         },
         {
           name: 'Cappuccino',
@@ -167,7 +176,8 @@ export const founders = [
             'Email Support'
           ],
           icon: 'CoffeeIcon',
-          popular: true
+          popular: true,
+          code:'pybot_2'
         },
         {
           name: 'Mocha Latte',
@@ -180,7 +190,8 @@ export const founders = [
             '99.5% Uptime',
             'Priority Support'
           ],
-          icon: 'CoffeeIcon'
+          icon: 'CoffeeIcon',
+          code:'pybot_3'
         }
       ]
     },
@@ -199,7 +210,8 @@ export const founders = [
             '99.5% Uptime',
             'Community Support'
           ],
-          icon: 'CoffeeIcon'
+          icon: 'CoffeeIcon',
+          code:'tsbot_1'
         },
         {
           name: 'Flat White',
@@ -214,7 +226,8 @@ export const founders = [
             'Email Support &#40;matei@espressohost.xyz or dm on discord devmatei&#41;'
           ],
           icon: 'CoffeeIcon',
-          popular: true
+          popular: true,
+          code:'tsbot_2'
         },
         {
           name: 'Affogato',
@@ -228,7 +241,8 @@ export const founders = [
             '99.5% Uptime',
             'Priority Support'
           ],
-          icon: 'CoffeeIcon'
+          icon: 'CoffeeIcon',
+          code:'tsbot_3'
         }
       ]
     }

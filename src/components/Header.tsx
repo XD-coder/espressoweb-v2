@@ -1,16 +1,27 @@
+"use client"
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   return (
     <header className="w-full bg-primary-200 text-white shadow-lg">
       {/* Promotional Banner */}
-      <div className=" text-center py-2 text-sm bg-red-600 font-medium">
+      <motion.div
+        className="text-center py-2 text-sm bg-red-600 font-medium"
+        initial={{ scale: 1 }}
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      >
         <p>🎉 Limited Time Offer: Get 20% off all plans! Use code ESPRESSO20 🎉</p>
-      </div>
+      </motion.div>
 
       {/* Main Header */}
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center relative">
+      <motion.nav
+        className="container mx-auto px-6 py-4 flex justify-between items-center relative"
+        whileHover={{ scale: 1.01 }}
+        transition={{ duration: 0.3 }}
+      >
         
         <div className="flex items-center">
           <Link href="/" className="flex items-center fill-orange-900 space-x-2">
@@ -23,7 +34,8 @@ const Header = () => {
           <Link href="/" className="hover:text-accent-300 transition-colors duration-200">Home</Link>
           <Link href="/plans" className="hover:text-accent-300 transition-colors duration-200">Plans</Link>
           <Link href="/about" className="hover:text-accent-300 transition-colors duration-200">About Us</Link>
-          <Link href="/contact" className="hover:text-accent-300 transition-colors duration-200">Contact</Link>
+          <Link href="https://discord.gg/yJRebH3239" className="hover:text-accent-300 transition-colors duration-200">Contact</Link>
+          <Link href="/billing" className="hover:text-accent-300 transition-colors duration-200">Billing</Link>
           <a
             href="https://control.espressohost.xyz"
             target="_blank"
@@ -53,7 +65,7 @@ const Header = () => {
             </svg>
           </button>
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 };

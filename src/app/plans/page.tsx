@@ -4,8 +4,9 @@ import Footer from '../../components/Footer';
 import { gameCategories } from '../../../data';
 import { motion } from 'framer-motion';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
-
+import { useRouter } from 'next/navigation';
 const PlansPage = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -48,8 +49,9 @@ const PlansPage = () => {
                         </li>
                       ))}
                     </ul>
-                    <button className="mt-auto bg-primary-800 hover:bg-primary-950 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-md transform hover:scale-105">
-                      Get Started
+                    <button className="mt-auto bg-primary-800 hover:bg-primary-950 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-md transform hover:scale-105"
+                    onClick={()=>{router.push(`/billing?plan=${plan.code}&catagory=${category.name}`)}}>
+                      Order Now 
                     </button>
                   </motion.div>
                 ))}

@@ -13,18 +13,7 @@ const Footer = () => {
           <p className="text-primary-300 text-sm">
             Your premier destination for high-performance, reliable game server hosting.
           </p>
-          <div className="flex space-x-4">
-            {/* Social Media Icons */}
-            <a href="#" className="text-primary-300 hover:text-accent-500 transition-colors duration-200">
-              <Image src="/discord.svg" alt="Discord" width={24} height={24} />
-            </a>
-            <a href="#" className="text-primary-300 hover:text-accent-500 transition-colors duration-200">
-              <Image src="/twitter.svg" alt="Twitter" width={24} height={24} />
-            </a>
-            <a href="#" className="text-primary-300 hover:text-accent-500 transition-colors duration-200">
-              <Image src="/facebook.svg" alt="Facebook" width={24} height={24} />
-            </a>
-          </div>
+          
         </div>
 
         <div>
