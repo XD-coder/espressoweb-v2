@@ -43,7 +43,7 @@ const Plans = () => {
                 ))}
               </ul>
               <button
-                onClick={() => router.push(`/billing?plan=${plan.code}&catagory=Minecraft`)}
+                onClick={() => router.push(`/billing?plancode=${plan.code}&catagory=Minecraft`)}
                 className="mt-auto bg-primary-800 hover:bg-primary-950 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-md transform hover:scale-105"
               >
                 Order Now

@@ -2,6 +2,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import {SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 
 const Header = () => {
   return (
@@ -13,7 +19,7 @@ const Header = () => {
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <p>🎉 Limited Time Offer: Get 20% off all plans! Use code ESPRESSO20 🎉</p>
+        <p>🎉 Limited Time Offer: Get 20% off all plans! ( Applied automatically at checkout )  🎉</p>
       </motion.div>
 
       {/* Main Header */}
@@ -65,6 +71,17 @@ const Header = () => {
             </svg>
           </button>
         </div>
+        {/* login signup clerk */}
+
+        <div className="hidden md:flex text-primary-700 font-bold items-center space-x-4"><SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut></div>
+          
+        
       </motion.nav>
     </header>
   );

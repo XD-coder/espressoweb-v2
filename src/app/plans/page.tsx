@@ -50,7 +50,7 @@ const PlansPage = () => {
                       ))}
                     </ul>
                     <button className="mt-auto bg-primary-800 hover:bg-primary-950 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-md transform hover:scale-105"
-                    onClick={()=>{router.push(`/billing?plan=${plan.code}&catagory=${category.name}`)}}>
+                    onClick={()=>{router.push(`/billing?plancode=${plan.code}&catagory=${category.name}`)}}>
                       Order Now 
                     </button>
                   </motion.div>
