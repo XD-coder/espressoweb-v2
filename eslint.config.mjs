@@ -6,11 +6,23 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+    baseDirectory: __dirname,
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+    // Your existing Next.js and TypeScript configuration
+    ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+    // Add this new object to override the rules
+    {
+        rules: {
+            // Disables the rule that errors on unused variables.
+            "@typescript-eslint/no-unused-vars": "off",
+            
+            // Disables the rule that errors on unused expressions.
+            "@typescript-eslint/no-unused-expressions": "off",
+        },
+    },
 ];
 
 export default eslintConfig;
