@@ -28,8 +28,8 @@ export const founders = [
   export const homePagePlans = [
     {
       name: 'The Single Shot',
-      price: '₹249',
-      discountedPrice: '₹149',
+      tokens: 3,
+      priceRs: 180,
       features: [
         '4 GB RAM',
         '2vcore',
@@ -42,8 +42,8 @@ export const founders = [
     },
     {
       name: 'The Double Shot',
-      price: '₹399',
-      discountedPrice: '₹239',
+      tokens: 5,
+      priceRs: 300,
       features: [
         '6 GB RAM',
         '3vcore',
@@ -57,8 +57,8 @@ export const founders = [
     },
     {
       name: 'The Latte',
-      price: '₹499',
-      discountedPrice: '₹299',
+      tokens: 8,
+      priceRs: 480,
       features: [
         '8 GB RAM',
         '4vcore',
@@ -68,6 +68,20 @@ export const founders = [
       ],
       icon: 'Coffee',
       code:'mc_3'
+    },
+    {
+      name: 'The Americano',
+      tokens: 11,
+      priceRs: 660,
+      features: [
+        '12 GB RAM',
+        '6vcore',
+        '30gb nvme',
+        'DDoS Protection',
+        '24/7 VIP Support'
+      ],
+      icon: 'Coffee',
+      code:'mc_4'
     }]
   
   export const gameCategories = [
@@ -76,8 +90,8 @@ export const founders = [
       plans: [
         {
           name: 'The Single Shot',
-          price: '₹249',
-          discountedPrice: '₹149',
+          tokens: 3,
+          priceRs: 180,
           features: [
             '4 GB RAM',
             '2vcore',
@@ -90,8 +104,8 @@ export const founders = [
         },
         {
           name: 'The Double Shot',
-          price: '₹399',
-          discountedPrice: '₹239',
+          tokens: 5,
+          priceRs: 300,
           features: [
             '6 GB RAM',
             '3vcore',
@@ -105,8 +119,8 @@ export const founders = [
         },
         {
           name: 'The Latte',
-          price: '₹499',
-          discountedPrice: '₹299',
+          tokens: 8,
+          priceRs: 480,
           features: [
             '8 GB RAM',
             '4vcore',
@@ -119,8 +133,8 @@ export const founders = [
         },
         {
           name: 'The Americano',
-          price: '₹599',
-          discountedPrice: '₹419',
+          tokens: 11,
+          priceRs: 660,
           features: [
             '12 GB RAM',
             '6vcore',
@@ -152,8 +166,8 @@ export const founders = [
       plans: [
         {
           name: 'Espresso Shot',
-          price: '€1.99',
-          discountedPrice: '€1.79',
+          tokens: 1,
+          priceRs: 60,
           features: [
             '1 GB RAM',
             '1 vCPU',
@@ -166,8 +180,8 @@ export const founders = [
         },
         {
           name: 'Cappuccino',
-          price: '€3.99',
-          discountedPrice: '€3.59',
+          tokens: 2,
+          priceRs: 120,
           features: [
             '2 GB RAM',
             '1 vCPU',
@@ -181,8 +195,8 @@ export const founders = [
         },
         {
           name: 'Mocha Latte',
-          price: '€6.99',
-          discountedPrice: '€6.29',
+          tokens: 4,
+          priceRs: 240,
           features: [
             '4 GB RAM',
             '2 vCPU',
@@ -200,8 +214,8 @@ export const founders = [
       plans: [
         {
           name: 'Macchiato',
-          price: '€1.49',
-          discountedPrice: '€1.34',
+          tokens: 1,
+          priceRs: 60,
           features: [
             '1 GB RAM',
             '1 vCPU',
@@ -215,8 +229,8 @@ export const founders = [
         },
         {
           name: 'Flat White',
-          price: '€2.99',
-          discountedPrice: '€2.69',
+          tokens: 2,
+          priceRs: 120,
           features: [
             '2 GB RAM',
             '1 vCPU',
@@ -231,8 +245,8 @@ export const founders = [
         },
         {
           name: 'Affogato',
-          price: '€4.99',
-          discountedPrice: '€4.49',
+          tokens: 4,
+          priceRs: 240,
           features: [
             '3 GB RAM',
             '2 vCPU',

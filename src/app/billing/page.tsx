@@ -20,7 +20,6 @@ function BillingPage() {
   const plans = selectedCategory && typeof selectedCategory === 'object' && 'plans' in selectedCategory ? selectedCategory.plans : [];
   const plan = plans.find((p) => p.code === planCode || p.code === Pcode);
 
-  console.log(Pcode, planCode);
 
   const { isSignedIn, user, isLoaded } = useUser();
 
@@ -61,10 +60,7 @@ function BillingPage() {
     );
   }
 
-  const subtotal = plan.discountedPrice.replace(/[^0-9.-]+/g, '');
-  const taxRate = 0.15;
-  const taxAmount = Math.round((taxRate * Number(subtotal)) * 100) / 100;
-  const total = Math.round((Number(subtotal) + Number(taxAmount))* 100) / 100;
+  const total =plan.priceRs;
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary-400 to-primary-200 text-gray-100">
@@ -96,16 +92,8 @@ function BillingPage() {
                 <h3 className="text-3xl font-bold text-white mb-6">Your Bill Summary</h3>
                 <div className="space-y-4 text-lg">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Original Price:</span>
-                    <span className="line-through text-gray-400 text-xl font-medium">${plan.price}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Discounted Price:</span>
-                    <span className="text-green-400 text-2xl font-bold">${plan.discountedPrice}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Tax (15% GST):</span>
-                    <span className="text-gray-200 text-xl font-medium">${taxAmount}</span>
+                    <span className="text-gray-300">Price:</span>
+                    <span className="text-green-400 text-2xl font-bold">₹{plan.priceRs}</span>
                   </div>
                   <div className="border-t border-gray-700 pt-4 mt-4 flex justify-between items-center font-bold text-2xl">
                     <span className="text-white">Total Amount:</span>
