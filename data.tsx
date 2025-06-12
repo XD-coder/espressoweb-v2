@@ -147,8 +147,8 @@ export const founders = [
         },
         {
           name: 'The Frappuccino',
-          price: '₹785',
-          discountedPrice: '₹550',
+          tokens: 13,
+          priceRs: 780,
           features: [
             '16 GB RAM',
             '6vcore',
