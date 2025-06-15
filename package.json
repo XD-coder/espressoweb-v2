@@ -12,11 +12,16 @@
     "@clerk/nextjs": "^6.21.0",
     "@heroicons/react": "^2.2.0",
     "autoprefixer": "^10.4.21",
+    "axios": "^1.9.0",
+    "child_process": "^1.0.2",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.511.0",
+    "mongoose": "^8.15.2",
+    "net": "^1.0.2",
     "next": "15.3.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "svix": "^1.67.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

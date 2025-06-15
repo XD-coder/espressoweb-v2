@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {SignInButton,
   SignUpButton,
+  RedirectToSignUp,
   SignedIn,
   SignedOut,
   UserButton,
