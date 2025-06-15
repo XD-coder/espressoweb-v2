@@ -3,7 +3,7 @@
 export const founders = [
     {
       name: 'Kartikey',
-      title: 'Lead Developer & Co-Founder',
+      title: 'Lead Frontend Developer & Co-Founder',
       description: 'Kartikey, the lead developer and co-founder, is the architect of Espresso Hosting. With a passion for technology and a commitment to excellence, Kartikey leads the development team, ensuring that our platform is not only functional but also user-friendly and optimized for performance.',
       image: 'https://cdn.discordapp.com/avatars/1048721304599150672/709177960108af4b9001a68d50c15e8d.webp?size=1024',
       icon: 'Code',
@@ -18,7 +18,7 @@ export const founders = [
     },
     {
       name: 'Divyanshu',
-      title: 'Lead Developer & Founder',
+      title: 'Lead Backend Developer & Founder',
       description: 'A backend virtuoso and the architectural mastermind of Espresso Hosting. Divyanshu, the lead developer and founder, specializes in building robust server infrastructures and optimizing database performance, ensuring our platform operates with maximum efficiency and scalability.',
       image: 'https://cdn.discordapp.com/avatars/1268498855083638828/a_63b1c5a96e89ad160d89a4140d040cf7?size=1024',
       icon: 'Code'
