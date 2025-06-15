@@ -103,7 +103,14 @@ function BillingPage() {
               </div>
               <div className="mt-10 flex flex-col gap-5">
                 
-                <button className="w-full bg-accent-500 hover:bg-accent-600 text-dark-100 font-extrabold py-4 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-75 text-xl">
+                <button 
+                  onClick={() => {
+                    if (plan.redirect) {
+                      window.location.href = plan.redirect;
+                    }
+                  }} 
+                  className="w-full bg-accent-500 hover:bg-accent-600 text-dark-100 font-extrabold py-4 rounded-lg transition-all duration-300 shadow-lg transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-75 text-xl"
+                >
                   Pay with Card / UPI
                 </button>
               </div>

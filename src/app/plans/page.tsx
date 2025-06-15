@@ -37,8 +37,7 @@ const PlansPage = () => {
                     )}
                     <h3 className="text-3xl font-bold text-primary-950 mb-4">{plan.name}</h3>
                     <p className="text-primary-700 text-lg mb-2">
-                      <span className="text-4xl font-extrabold text-accent-500">{plan.discountedPrice}</span>
-                      <span className="line-through text-primary-400 ml-2">{plan.price}</span>
+                      <span className="text-4xl font-extrabold text-accent-500">₹{plan.priceRs}</span>
                       <span className="text-primary-600">/month</span>
                     </p>
                     <ul className="text-left text-primary-800 space-y-3 mb-8 flex-grow">

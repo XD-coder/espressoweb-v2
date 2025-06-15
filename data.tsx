@@ -100,7 +100,8 @@ export const founders = [
             '24/7 Support (Discord)'
           ],
           icon: 'Coffee',
-          code: 'mc_1'
+          code: 'mc_1',
+          redirect: 'https://rzp.io/rzp/3sIYFzpp'
         },
         {
           name: 'The Double Shot',
@@ -115,7 +116,8 @@ export const founders = [
           ],
           icon: 'CoffeeIcon',
           popular: true,
-          code: 'mc_2'
+          code: 'mc_2',
+          redirect: 'https://rzp.io/rzp/4VCjxA3Q'
         },
         {
           name: 'The Latte',
@@ -129,7 +131,8 @@ export const founders = [
             '24/7 VIP Support'
           ],
           icon: 'Coffee',
-          code:'mc_3'
+          code:'mc_3',
+          redirect: 'https://rzp.io/rzp/T8BIExt'
         },
         {
           name: 'The Americano',
@@ -143,7 +146,8 @@ export const founders = [
             '24/7 VIP Support'
           ],
           icon: 'Coffee',
-          code:'mc_4'
+          code:'mc_4',
+          redirect: 'https://rzp.io/rzp/2WR7AKW8'
         },
         {
           name: 'The Frappuccino',
@@ -157,110 +161,111 @@ export const founders = [
             '24/7 VIP Support'
           ],
           icon: 'Coffee',
-          code:'mc_5'
+          code:'mc_5',
+          redirect: 'https://rzp.io/rzp/sMiapV7V'
         }
       ]
     },
-    {
-      name: 'Discord Bot (Python)',
-      plans: [
-        {
-          name: 'Espresso Shot',
-          tokens: 1,
-          priceRs: 60,
-          features: [
-            '1 GB RAM',
-            '1 vCPU',
-            '10GB SSD',
-            '99.5% Uptime',
-            'Community Support'
-          ],
-          icon: 'CoffeeIcon',
-          code:'pybot_1'
-        },
-        {
-          name: 'Cappuccino',
-          tokens: 2,
-          priceRs: 120,
-          features: [
-            '2 GB RAM',
-            '1 vCPU',
-            '20GB SSD',
-            '99.5% Uptime',
-            'Email Support'
-          ],
-          icon: 'CoffeeIcon',
-          popular: true,
-          code:'pybot_2'
-        },
-        {
-          name: 'Mocha Latte',
-          tokens: 4,
-          priceRs: 240,
-          features: [
-            '4 GB RAM',
-            '2 vCPU',
-            '40GB SSD',
-            '99.5% Uptime',
-            'Priority Support'
-          ],
-          icon: 'CoffeeIcon',
-          code:'pybot_3'
-        }
-      ]
-    },
-    {
-      name: 'Discord Bot (TypeScript)',
-      plans: [
-        {
-          name: 'Macchiato',
-          tokens: 1,
-          priceRs: 60,
-          features: [
-            '1 GB RAM',
-            '1 vCPU',
-            '10GB SSD',
-            'Node.js 20+',
-            '99.5% Uptime',
-            'Community Support'
-          ],
-          icon: 'CoffeeIcon',
-          code:'tsbot_1'
-        },
-        {
-          name: 'Flat White',
-          tokens: 2,
-          priceRs: 120,
-          features: [
-            '2 GB RAM',
-            '1 vCPU',
-            '20GB SSD',
-            'Node.js 20+',
-            '99.5% Uptime',
-            'Email Support &#40;matei@espressohost.xyz or dm on discord devmatei&#41;'
-          ],
-          icon: 'CoffeeIcon',
-          popular: true,
-          code:'tsbot_2'
-        },
-        {
-          name: 'Affogato',
-          tokens: 4,
-          priceRs: 240,
-          features: [
-            '3 GB RAM',
-            '2 vCPU',
-            '30GB SSD',
-            'Node.js 20+',
-            '99.5% Uptime',
-            'Priority Support'
-          ],
-          icon: 'CoffeeIcon',
-          code:'tsbot_3'
-        }
-      ]
-    }
-  ];
+  //  {
+  //     name: 'Discord Bot (Python)',
+  //     plans: [
+  //       {
+  //         name: 'Espresso Shot',
+  //         tokens: 1,
+  //         priceRs: 60,
+  //         features: [
+  //           '1 GB RAM',
+  //           '1 vCPU',
+  //           '10GB SSD',
+  //           '99.5% Uptime',
+  //           'Community Support'
+  //         ],
+  //         icon: 'CoffeeIcon',
+  //         code:'pybot_1'
+  //       },
+  //       {
+  //         name: 'Cappuccino',
+  //         tokens: 2,
+  //         priceRs: 120,
+  //         features: [
+  //           '2 GB RAM',
+  //           '1 vCPU',
+  //           '20GB SSD',
+  //           '99.5% Uptime',
+  //           'Email Support'
+  //         ],
+  //         icon: 'CoffeeIcon',
+  //         popular: true,
+  //         code:'pybot_2'
+  //       },
+  //       {
+  //         name: 'Mocha Latte',
+  //         tokens: 4,
+  //         priceRs: 240,
+  //         features: [
+  //           '4 GB RAM',
+  //           '2 vCPU',
+  //           '40GB SSD',
+  //           '99.5% Uptime',
+  //           'Priority Support'
+  //         ],
+  //         icon: 'CoffeeIcon',
+  //         code:'pybot_3'
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     name: 'Discord Bot (TypeScript)',
+  //     plans: [
+  //       {
+  //         name: 'Macchiato',
+  //         tokens: 1,
+  //         priceRs: 60,
+  //         features: [
+  //           '1 GB RAM',
+  //           '1 vCPU',
+  //           '10GB SSD',
+  //           'Node.js 20+',
+  //           '99.5% Uptime',
+  //           'Community Support'
+  //         ],
+  //         icon: 'CoffeeIcon',
+  //         code:'tsbot_1'
+  //       },
+  //       {
+  //         name: 'Flat White',
+  //         tokens: 2,
+  //         priceRs: 120,
+  //         features: [
+  //           '2 GB RAM',
+  //           '1 vCPU',
+  //           '20GB SSD',
+  //           'Node.js 20+',
+  //           '99.5% Uptime',
+  //           'Email Support & Quick Discord support'
+  //         ],
+  //         icon: 'CoffeeIcon',
+  //         popular: true,
+  //         code:'tsbot_2'
+  //       },
+  //       {
+  //         name: 'Affogato',
+  //         tokens: 4,
+  //         priceRs: 240,
+  //         features: [
+  //           '3 GB RAM',
+  //           '2 vCPU',
+  //           '30GB SSD',
+  //           'Node.js 20+',
+  //           '99.5% Uptime',
+  //           'Priority Support'
+  //         ],
+  //         icon: 'CoffeeIcon',
+  //         code:'tsbot_3'
+  //       }
+  //     ]
+  //   }
+   ];
   
   export const features = [
     {
