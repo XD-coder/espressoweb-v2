@@ -69,17 +69,17 @@ function BillingPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-100 to-primary-300">
       <Header />
-      <main className="flex-1 flex flex-col items-center justify-center py-12 px-4">
+      <main className="flex-1 flex flex-col items-center justify-center py-8 sm:py-12 px-4">
         <div className="w-full max-w-6xl bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-[1.01] border border-primary-200">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            <div className="p-8 md:p-12 bg-gradient-to-br from-primary-50 to-primary-100 flex flex-col justify-between border-b md:border-b-0 md:border-r border-primary-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0">
+            <div className="p-6 sm:p-8 md:p-12 bg-gradient-to-br from-primary-50 to-primary-100 flex flex-col justify-between border-b md:border-b-0 md:border-r border-primary-200">
               <div>
-                <h2 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">{plan.name}</h2>
-                <h3 className="text-2xl font-semibold text-primary-800 mb-6">Features:</h3>
-                <ul className="space-y-4 text-primary-700 text-lg">
+                <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">{plan.name}</h2>
+                <h3 className="text-xl sm:text-2xl font-semibold text-primary-800 mb-6">Features:</h3>
+                <ul className="space-y-3 sm:space-y-4 text-primary-700 text-base sm:text-lg">
                   {plan.features && plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <svg className="w-6 h-6 text-accent-500 mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-500 mr-2 sm:mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span className="leading-relaxed">{feature}</span>
@@ -88,17 +88,17 @@ function BillingPage() {
                 </ul>
               </div>
             </div>
-            <div className="p-8 md:p-12 flex flex-col justify-between bg-white">
+            <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-between bg-white">
               <div>
-                <h3 className="text-3xl font-bold text-primary-900 mb-8 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Your Bill Summary</h3>
-                <div className="space-y-6 text-lg">
-                  <div className="flex justify-between items-center bg-primary-50 p-4 rounded-xl border border-primary-200">
+                <h3 className="text-2xl sm:text-3xl font-bold text-primary-900 mb-6 sm:mb-8 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Your Bill Summary</h3>
+                <div className="space-y-4 sm:space-y-6 text-base sm:text-lg">
+                  <div className="flex justify-between items-center bg-primary-50 p-3 sm:p-4 rounded-xl border border-primary-200">
                     <span className="text-primary-700 font-medium">Price:</span>
-                    <span className="text-2xl font-bold text-accent-600">₹{plan.priceRs}</span>
+                    <span className="text-xl sm:text-2xl font-bold text-accent-600">₹{plan.priceRs}</span>
                   </div>
-                  <div className="flex justify-between items-center bg-primary-100 p-6 rounded-xl border-2 border-primary-300">
-                    <span className="text-primary-800 font-bold text-xl">Total Amount:</span>
-                    <span className="text-3xl font-extrabold text-accent-600">₹{total}</span>
+                  <div className="flex justify-between items-center bg-primary-100 p-4 sm:p-6 rounded-xl border-2 border-primary-300">
+                    <span className="text-primary-800 font-bold text-lg sm:text-xl">Total Amount:</span>
+                    <span className="text-2xl sm:text-3xl font-extrabold text-accent-600">₹{total}</span>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ function BillingPage() {
                       window.location.href = plan.redirect;
                     }
                   }} 
-                  className="w-full bg-accent-500 hover:bg-accent-600 text-white font-extrabold py-5 rounded-xl transition-all duration-300 shadow-lg transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-accent-500 focus:ring-opacity-50 text-xl"
+                  className="w-full mt-8 sm:mt-10 bg-accent-500 hover:bg-accent-600 text-primary-950 py-3 sm:py-4 px-6 rounded-xl font-bold text-lg sm:text-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-opacity-50 shadow-lg"
                 >
                   Pay with Card / UPI
                 </button>

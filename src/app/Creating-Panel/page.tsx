@@ -49,7 +49,7 @@ const MakingPanel = () => {
         <p className="text-xl text-primary-800 mb-6">Email: <span className="font-semibold text-accent-600 bg-accent-50 px-3 py-1 rounded-full">{userEmail}</span></p>
         {error && <p className="text-red-500 mt-4 p-4 bg-red-50 rounded-xl border border-red-200 animate-pulse">{error}</p>}
 
-        {showPopup && panelPassword && (
+        {showPopup && (
           <div className="fixed inset-0 bg-primary-900/70 backdrop-blur-md flex items-center justify-center z-50 animate-fadeIn">
             <div className="bg-white/95 p-10 rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100 hover:scale-[1.02]">
               <h2 className="text-3xl font-extrabold mb-8 text-primary-900 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text ">Panel Password</h2>
