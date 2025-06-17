@@ -27,7 +27,7 @@ const Header = () => {
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <p>🎉 Limited Time Offer: Get 20% off all plans! ( Applied automatically at checkout )  🎉</p>
+        <p>🎉 Limited Time Offer: Get 20% off on all plans! ( Applied automatically at checkout )  🎉</p>
       </motion.div>
 
       {/* Main Header */}
