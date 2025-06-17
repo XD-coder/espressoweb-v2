@@ -285,7 +285,7 @@ export const founders = [
     {
       icon: 'Globe',
       title: 'Asian Infrastructure',
-      description: 'Strategically located servers across Europe for optimal connectivity.'
+      description: 'Strategically located servers across Asia for optimal connectivity across the continent.'
     },
     {
       icon: 'Layers',
