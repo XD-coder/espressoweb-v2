@@ -28,8 +28,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Services</h3>
           <ul className="space-y-2">
-            <li><Link href="/plans/minecraft" className="text-primary-300 hover:text-accent-500 transition-colors duration-200">Minecraft Hosting</Link></li>
-            <li><Link href="/plans/discord-bot" className="text-primary-300 hover:text-accent-500 transition-colors duration-200">Discord Bot Hosting</Link></li>
+            
             <li><Link href="/plans" className="text-primary-300 hover:text-accent-500 transition-colors duration-200">View All Plans</Link></li>
           </ul>
         </div>
