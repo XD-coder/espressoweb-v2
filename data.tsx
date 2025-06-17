@@ -147,7 +147,7 @@ export const founders = [
         },
         {
           name: 'The Frappuccino',
-          priceRs: '₹800',
+          priceRs: 800,
           features: [
             '8 GB RAM',
             '400% CPU',
@@ -161,7 +161,7 @@ export const founders = [
         },
         {
           name: 'The Araku',
-          priceRs: '₹1200',
+          priceRs: 1200,
           features: [
             '12 GB RAM',
             '600% CPU',
