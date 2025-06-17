@@ -1,6 +1,6 @@
 "use client"
 import { motion } from 'framer-motion';
-import { homePagePlans } from '../../data'; // Assuming data.tsx is in the root of my-app
+import { gameCategories } from '../../data'; // Assuming data.tsx is in the root of my-app
 import { CheckCircleIcon } from '@heroicons/react/24/solid'; // Example icon
 import { useRouter } from 'next/navigation';
 
@@ -15,7 +15,7 @@ const Plans = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {homePagePlans.map((plan, index) => (
+          {gameCategories[0].plans.map((plan, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -30,8 +30,8 @@ const Plans = () => {
               )}
               <h3 className="text-3xl font-bold text-primary-950 mb-4">{plan.name}</h3>
               <p className="text-primary-700 text-lg mb-2">
-                <span className="text-4xl font-extrabold text-accent-500">{plan.tokens}</span>
-                <span className="text-primary-600"> tokens/month</span>
+                <span className="text-4xl font-extrabold text-accent-500">{plan.priceRs}</span>
+                <span className="text-primary-600"> /month</span>
               </p>
               <ul className="text-left text-primary-800 space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, featureIndex) => (

@@ -1,4 +1,4 @@
-// This file will store all reusable data for the website.
+
 
 export const founders = [
     {
@@ -27,13 +27,12 @@ export const founders = [
 
   export const homePagePlans = [
     {
-      name: 'The Single Shot',
-      tokens: 3,
-      priceRs: 180,
+        name: 'The Single Shot',
+      price: '₹200',
       features: [
-        '4 GB RAM',
-        '2vcore',
-        '10gb nvme',
+        '2 GB RAM',
+        '100% CPU',
+        '4096 MB Disk',
         'DDoS Protection',
         '24/7 Support (Discord)'
       ],
@@ -42,12 +41,11 @@ export const founders = [
     },
     {
       name: 'The Double Shot',
-      tokens: 5,
-      priceRs: 300,
+      price: '₹300',
       features: [
-        '6 GB RAM',
-        '3vcore',
-        '15gb nvme',
+        '3 GB RAM',
+        '150% CPU',
+        '6144 MB Disk',
         'DDoS Protection',
         '24/7 Priority Support'
       ],
@@ -57,12 +55,11 @@ export const founders = [
     },
     {
       name: 'The Latte',
-      tokens: 8,
-      priceRs: 480,
+      price: '₹400',
       features: [
-        '8 GB RAM',
-        '4vcore',
-        '20 GB SSD',
+        '4 GB RAM',
+        '200% CPU',
+        '10240 MB Disk',
         'DDoS Protection',
         '24/7 VIP Support'
       ],
@@ -71,12 +68,11 @@ export const founders = [
     },
     {
       name: 'The Americano',
-      tokens: 11,
-      priceRs: 660,
+      price: '₹600',
       features: [
-        '12 GB RAM',
-        '6vcore',
-        '30gb nvme',
+        '6 GB RAM',
+        '300% CPU',
+        '12288 MB Disk',
         'DDoS Protection',
         '24/7 VIP Support'
       ],
@@ -91,11 +87,11 @@ export const founders = [
         {
           name: 'The Single Shot',
           tokens: 3,
-          priceRs: 180,
+          priceRs: 200,
           features: [
-            '4 GB RAM',
-            '2vcore',
-            '10gb nvme',
+            '2 GB RAM',
+            '100% CPU',
+            '4096 MB Disk',
             'DDoS Protection',
             '24/7 Support (Discord)'
           ],
@@ -108,9 +104,9 @@ export const founders = [
           tokens: 5,
           priceRs: 300,
           features: [
-            '6 GB RAM',
-            '3vcore',
-            '15gb nvme',
+            '3 GB RAM',
+            '150% CPU',
+            '6144 MB Disk',
             'DDoS Protection',
             '24/7 Priority Support'
           ],
@@ -122,47 +118,60 @@ export const founders = [
         {
           name: 'The Latte',
           tokens: 8,
-          priceRs: 480,
+          priceRs: 400,
           features: [
-            '8 GB RAM',
-            '4vcore',
-            '20 GB SSD',
+            '4 GB RAM',
+            '200% CPU',
+            '10240 MB Disk',
             'DDoS Protection',
             '24/7 VIP Support'
           ],
           icon: 'Coffee',
           code:'mc_3',
-          redirect: 'https://rzp.io/rzp/T8BIExt'
+          redirect: 'https://rzp.io/rzp/T8BIExt?plan=The Latte'
         },
         {
           name: 'The Americano',
           tokens: 11,
-          priceRs: 660,
+          priceRs: 600,
           features: [
-            '12 GB RAM',
-            '6vcore',
-            '30gb nvme',
+            '6 GB RAM',
+            '300% CPU',
+            '12288 MB Disk',
             'DDoS Protection',
             '24/7 VIP Support'
           ],
           icon: 'Coffee',
           code:'mc_4',
-          redirect: 'https://rzp.io/rzp/2WR7AKW8'
+          redirect: 'https://rzp.io/rzp/2WR7AKW8?plan=The Americano'
         },
         {
           name: 'The Frappuccino',
-          tokens: 13,
-          priceRs: 780,
+          priceRs: '₹800',
           features: [
-            '16 GB RAM',
-            '6vcore',
-            '40gb nvme',
+            '8 GB RAM',
+            '400% CPU',
+            '15360 MB Disk',
             'DDoS Protection',
             '24/7 VIP Support'
           ],
           icon: 'Coffee',
           code:'mc_5',
-          redirect: 'https://rzp.io/rzp/sMiapV7V'
+          redirect: 'https://rzp.io/rzp/sMiapV7V?plan=The-Frappuccino'
+        },
+        {
+          name: 'The Araku',
+          priceRs: '₹1200',
+          features: [
+            '12 GB RAM',
+            '600% CPU',
+            '25600 MB Disk',
+            'DDoS Protection',
+            '24/7 VIP Support'
+          ],
+          icon: 'Coffee',
+          code:'mc_6',
+          redirect: 'https://rzp.io/rzp/jBuPdtdN?plan=The-Araku'
         }
       ]
     },
@@ -275,7 +284,7 @@ export const founders = [
     },
     {
       icon: 'Globe',
-      title: 'European Infrastructure',
+      title: 'Asian Infrastructure',
       description: 'Strategically located servers across Europe for optimal connectivity.'
     },
     {
