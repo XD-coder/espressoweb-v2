@@ -97,7 +97,7 @@ export const founders = [
           ],
           icon: 'Coffee',
           code: 'mc_1',
-          redirect: 'https://rzp.io/rzp/3sIYFzpp'
+          redirect: 'https://rzp.io/rzp/3sIYFzpp?plan=The%20Single%20Shot'
         },
         {
           name: 'The Double Shot',
@@ -113,7 +113,7 @@ export const founders = [
           icon: 'CoffeeIcon',
           popular: true,
           code: 'mc_2',
-          redirect: 'https://rzp.io/rzp/4VCjxA3Q'
+          redirect: 'https://rzp.io/rzp/4VCjxA3Q?plan=The%20Double%20Shot'
         },
         {
           name: 'The Latte',
@@ -128,7 +128,7 @@ export const founders = [
           ],
           icon: 'Coffee',
           code:'mc_3',
-          redirect: 'https://rzp.io/rzp/T8BIExt?plan=The Latte'
+          redirect: 'https://rzp.io/rzp/T8BIExt?plan=The%20Latte'
         },
         {
           name: 'The Americano',
@@ -143,7 +143,7 @@ export const founders = [
           ],
           icon: 'Coffee',
           code:'mc_4',
-          redirect: 'https://rzp.io/rzp/2WR7AKW8?plan=The Americano'
+          redirect: 'https://rzp.io/rzp/2WR7AKW8?plan=The%20Americano'
         },
         {
           name: 'The Frappuccino',
@@ -157,7 +157,7 @@ export const founders = [
           ],
           icon: 'Coffee',
           code:'mc_5',
-          redirect: 'https://rzp.io/rzp/sMiapV7V?plan=The-Frappuccino'
+          redirect: 'https://rzp.io/rzp/sMiapV7V?plan=The%20Frappuccino'
         },
         {
           name: 'The Araku',
@@ -171,7 +171,7 @@ export const founders = [
           ],
           icon: 'Coffee',
           code:'mc_6',
-          redirect: 'https://rzp.io/rzp/jBuPdtdN?plan=The-Araku'
+          redirect: 'https://rzp.io/rzp/jBuPdtdN?plan=The%20Araku'
         }
       ]
     },
