@@ -13,29 +13,36 @@ const Hero = () => {
         </motion.div>
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between relative z-10">
-        {/* Content Block */}
-        <motion.div
+        {/* Content Block */}        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0"
         >
           <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Experience <span className="text-accent-600">Blazing-Fast</span> Game Hosting
+            Premium <span className="text-accent-600">Minecraft Server</span> Hosting
           </h1>
           <p className="text-xl text-gray-200 mb-8">
-            Unleash the full potential of your gaming community with our high-performance, reliable, and affordable servers.
+            Unleash the full potential of your Minecraft community with our high-performance, reliable servers. 99.9% uptime guarantee with 24/7 support.
           </p>
+          <div className="mt-4 mb-8 flex flex-wrap gap-2">
+            <span className="bg-primary-700 text-white text-sm px-3 py-1 rounded-full">NVMe SSD Storage</span>
+            <span className="bg-primary-700 text-white text-sm px-3 py-1 rounded-full">Anti-DDoS Protection</span>
+            <span className="bg-primary-700 text-white text-sm px-3 py-1 rounded-full">One-Click Modpacks</span>
+            <span className="bg-primary-700 text-white text-sm px-3 py-1 rounded-full">Instant Setup</span>
+          </div>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
             <Link
               href="/plans"
               className="bg-accent-500 hover:bg-accent-600 text-primary-950 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg transform hover:scale-105"
+              aria-label="View our Minecraft server hosting plans"
             >
-              View Our Plans
+              Start Your Server
             </Link>
             <Link
               href="/about"
               className="bg-transparent border-2 border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-primary-500 hover:text-white transform hover:scale-105"
+              aria-label="Learn more about our Minecraft hosting services"
             >
               Learn More
             </Link>

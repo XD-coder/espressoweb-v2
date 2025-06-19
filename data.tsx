@@ -29,6 +29,7 @@ export const founders = [
     {
         name: 'The Single Shot',
       price: '₹200',
+      description: 'Perfect for small Minecraft servers with a few players. Ideal for vanilla Minecraft gameplay.',
       features: [
         '2 GB RAM',
         '100% CPU',
@@ -37,11 +38,16 @@ export const founders = [
         '24/7 Support (Discord)'
       ],
       icon: 'Coffee',
-      code: 'mc_1'
+      code: 'mc_1',
+      seo: {
+        title: 'Budget Minecraft Server Hosting - Single Shot Plan',
+        description: 'Affordable Minecraft server hosting with 2GB RAM, perfect for small vanilla servers and friends'
+      }
     },
     {
       name: 'The Double Shot',
       price: '₹300',
+      description: 'Our most popular plan. Great for medium-sized servers with light mods or plugins.',
       features: [
         '3 GB RAM',
         '150% CPU',
@@ -51,11 +57,16 @@ export const founders = [
       ],
       icon: 'CoffeeIcon',
       popular: true,
-      code: 'mc_2'
+      code: 'mc_2',
+      seo: {
+        title: 'Popular Minecraft Server Hosting - Double Shot Plan',
+        description: 'Best-selling Minecraft server hosting with 3GB RAM, ideal for modded servers and up to 15 players'
+      }
     },
     {
       name: 'The Latte',
       price: '₹400',
+      description: 'Premium plan for serious Minecraft communities. Run multiple mods and plugins effortlessly.',
       features: [
         '4 GB RAM',
         '200% CPU',
@@ -64,11 +75,16 @@ export const founders = [
         '24/7 VIP Support'
       ],
       icon: 'Coffee',
-      code:'mc_3'
+      code:'mc_3',
+      seo: {
+        title: 'Premium Minecraft Server Hosting - Latte Plan',
+        description: 'High-performance Minecraft server hosting with 4GB RAM, perfect for modpacks and larger communities'
+      }
     },
     {
       name: 'The Americano',
       price: '₹600',
+      description: 'Our professional-grade hosting solution for large communities and heavy modpacks.',
       features: [
         '6 GB RAM',
         '300% CPU',
@@ -77,8 +93,11 @@ export const founders = [
         '24/7 VIP Support'
       ],
       icon: 'Coffee',
-      code:'mc_4'
-    }]
+      code:'mc_4',      seo: {
+        title: 'Professional Minecraft Server Hosting - Americano Plan',
+        description: 'Enterprise-grade Minecraft server hosting with 6GB RAM for large communities and intensive modpacks'
+      }    }
+  ];
   
   export const gameCategories = [
     {

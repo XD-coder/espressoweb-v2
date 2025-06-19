@@ -1,17 +1,44 @@
 "use client"
 import { motion } from 'framer-motion';
-import { gameCategories } from '../../data'; // Assuming data.tsx is in the root of my-app
-import { CheckCircleIcon } from '@heroicons/react/24/solid'; // Example icon
+import { gameCategories, homePagePlans } from '../../data';
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/navigation';
+import Script from 'next/script';
 
 const Plans = () => {
   const router = useRouter();
+  
+  // Product schema for SEO
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "ItemList",
+    "itemListElement": homePagePlans.map((plan, index) => ({
+      "@type": "Product",
+      "position": index + 1,
+      "name": `Espresso Hosting ${plan.name} - Minecraft Server Hosting`,
+      "description": plan.description || `${plan.name} Minecraft server hosting plan with ${plan.features[0]} and ${plan.features[1]}`,
+      "offers": {
+        "@type": "Offer",
+        "price": plan.price.replace('₹', ''),
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      }
+    }))
+  };
+
   return (
-    <section className="py-20 bg-primary-50">
+    <section className="py-20 bg-primary-50" id="plans">
+      {/* Schema.org markup for structured data */}
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-primary-900 mb-6">Our Popular Plans</h2>
+        <h2 className="text-4xl font-bold text-primary-900 mb-6">Our Premium Minecraft Hosting Plans</h2>
         <p className="text-xl text-primary-700 mb-12">
-          Choose the perfect plan that fits your gaming needs.
+          Choose the perfect plan for your Minecraft server, designed for optimal performance and reliability.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

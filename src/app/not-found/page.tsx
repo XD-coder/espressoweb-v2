@@ -1,6 +1,16 @@
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | Espresso Hosting',
+  description: 'Sorry, we couldn\'t find the page you were looking for. Explore our Minecraft server hosting plans or return to the homepage.',
+  robots: {
+    index: false,
+    follow: true,
+  }
+};
 
 const NotFoundPage = () => {
   return (

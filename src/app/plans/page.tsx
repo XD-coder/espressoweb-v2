@@ -5,6 +5,10 @@ import { gameCategories } from '../../../data';
 import { motion } from 'framer-motion';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/navigation';
+
+// Metadata is in a separate file for client components
+// See next section where we'll create plans/metadata.ts
+
 const PlansPage = () => {
   const router = useRouter();
   return (

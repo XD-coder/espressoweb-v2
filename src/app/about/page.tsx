@@ -1,6 +1,29 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import type { Metadata } from "next";
+
+// Optimize metadata for this page
+export const metadata: Metadata = {
+  title: "About Espresso Hosting | Our Story & Premium Minecraft Hosting Mission",
+  description: "Learn about Espresso Hosting's journey to provide the best Minecraft server hosting with premium hardware, 24/7 support and a passionate team of gaming experts.",
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: "About Espresso Hosting | Premium Minecraft Server Hosting",
+    description: "Learn about our mission to provide the best Minecraft server hosting experience with premium hardware and 24/7 support.",
+    url: 'https://espressohost.xyz/about',
+    images: [
+      {
+        url: 'https://espressohost.xyz/hero-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Espresso Hosting - Premium Minecraft Server Hosting',
+      },
+    ],
+  }
+};
 
 const AboutUs = () => {
   return (
