@@ -568,8 +568,115 @@ export default function ForgeHosting() {
                   "@type": "Answer",
                   "text": "Yes! You can upload your existing Minecraft world to our Forge server through our file manager or SFTP access. Simply compress your world folder to a ZIP archive, upload it to your server, and extract it to the correct location. Keep in mind that converting a vanilla world to a heavily modded one may cause some generation issues in unexplored chunks, but pre-existing areas will remain intact."
                 }
+              }            ]
+          })
+        }}
+      />
+      
+      {/* Structured data for HowTo Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Set Up a Forge Minecraft Server",
+            "description": "A step-by-step guide to setting up and optimizing your Forge Minecraft server for modded gameplay.",
+            "totalTime": "PT30M",
+            "tool": [
+              {
+                "@type": "HowToTool",
+                "name": "Espresso Hosting Control Panel"
+              },
+              {
+                "@type": "HowToTool",
+                "name": "Minecraft Forge Installer"
+              },
+              {
+                "@type": "HowToTool",
+                "name": "File Manager or SFTP Client"
+              }
+            ],
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Choose the Right Plan",
+                "text": "Select a hosting plan based on your modpack size. For small modpacks (0-50 mods), our Espresso plan with 4GB RAM works well. For medium modpacks (50-100 mods), choose the Latte plan with 6GB RAM. Larger modpacks with 100+ mods need at least 8GB RAM from our Americano plan.",
+                "url": "https://espressohost.xyz/plans",
+                "image": "https://espressohost.xyz/hero-image.png"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Install Forge",
+                "text": "After ordering, log into your control panel and select \"Forge\" as your server type. Choose your Minecraft version (1.12.2, 1.16.5, 1.18.2, and 1.20.1 are popular for mods), and our system will automatically install the compatible Forge version.",
+                "url": "https://espressohost.xyz/forge-hosting#installation",
+                "image": "https://espressohost.xyz/hero-image.png"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Install Your Modpack",
+                "text": "For popular modpacks, use our one-click installer to add FTB, All The Mods, RLCraft, and other packs instantly. For custom modpacks, use our file manager to upload mod files to the \"mods\" folder or upload a ZIP of the entire modpack.",
+                "url": "https://espressohost.xyz/forge-hosting#modpacks",
+                "image": "https://espressohost.xyz/hero-image.png"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Configure Server Settings",
+                "text": "Access server.properties through our file manager to adjust view-distance (6-10 is recommended for modded servers), spawn-protection, and other settings. For modpack-specific configurations, check the modpack documentation or our knowledge base for optimization guides.",
+                "url": "https://espressohost.xyz/forge-hosting#optimization",
+                "image": "https://espressohost.xyz/hero-image.png"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Adjust Java Arguments",
+                "text": "Our system automatically applies optimized Java arguments for your server's RAM allocation, but you can fine-tune these through the Startup Parameters section in your control panel. Adding performance mods like Aikar's flags can further enhance server performance.",
+                "url": "https://espressohost.xyz/forge-hosting#optimization",
+                "image": "https://espressohost.xyz/hero-image.png"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Add Performance Mods",
+                "text": "Consider adding performance-enhancing mods like FoamFix, AI Improvements, or Clumps to your modpack. These mods can significantly improve server performance without changing gameplay. Our support team can recommend the best performance mods for your specific Minecraft and Forge version.",
+                "url": "https://espressohost.xyz/forge-hosting#optimization",
+                "image": "https://espressohost.xyz/hero-image.png"
               }
             ]
+          })
+        }}
+      />
+      
+      {/* Structured data for Product */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Forge Minecraft Server Hosting",
+            "description": "Premium Forge server hosting for modded Minecraft with one-click modpack installation, high-performance hardware, and 24/7 support.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Espresso Hosting"
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "INR",
+              "lowPrice": "299",
+              "highPrice": "599",
+              "offerCount": "3"
+            },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4.8",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Minecraft Community"
+              }
+            }
           })
         }}
       />
