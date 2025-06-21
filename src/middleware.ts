@@ -25,11 +25,18 @@ export function middleware(request: NextRequest) {
     url.host = hostname.replace(/^www\./, '');
     return NextResponse.redirect(url);
   }
-  
-  // Redirect old URLs to new ones (example)
+  // Redirect common search terms and old URLs to relevant pages
   const redirects = new Map([
     ['/hosting', '/plans'],
-    ['/minecraft', '/plans'],
+    ['/minecraft', '/minecraft-servers'],
+    ['/minecraft-server-hosting', '/minecraft-servers'],
+    ['/java-edition', '/minecraft-java'],
+    ['/java-servers', '/minecraft-java'],
+    ['/forge', '/forge-hosting'],
+    ['/modded', '/forge-hosting'],
+    ['/modded-minecraft', '/forge-hosting'],
+    ['/minecraft-java-edition', '/minecraft-java'],
+    ['/server-hosting', '/minecraft-servers'],
     ['/contact-us', '/about#contact'],
   ]);
 

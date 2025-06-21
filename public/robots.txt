@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /minecraft-java
+Allow: /forge-hosting
+Allow: /plans
+Disallow: /admin/
+Disallow: /api/
+Disallow: /Creating-Panel/login
+Disallow: /Creating-Panel/register
+Disallow: /billing/checkout
 
+# Primary sitemap
 Sitemap: https://espressohost.xyz/sitemap.xml

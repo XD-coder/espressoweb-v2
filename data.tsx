@@ -1,5 +1,3 @@
-
-
 export const founders = [
     {
       name: 'Kartikey',
@@ -25,9 +23,8 @@ export const founders = [
     }
   ];
 
-  export const homePagePlans = [
-    {
-        name: 'The Single Shot',
+  export const homePagePlans = [{
+    name: 'The Single Shot',
       price: '₹200',
       description: 'Perfect for small Minecraft servers with a few players. Ideal for vanilla Minecraft gameplay.',
       features: [
@@ -42,8 +39,8 @@ export const founders = [
       seo: {
         title: 'Budget Minecraft Server Hosting - Single Shot Plan',
         description: 'Affordable Minecraft server hosting with 2GB RAM, perfect for small vanilla servers and friends'
-      }
-    },
+      
+  }},
     {
       name: 'The Double Shot',
       price: '₹300',
@@ -104,9 +101,27 @@ export const founders = [
       name: 'Minecraft',
       plans: [
         {
+          name: 'On the House',
+          tokens: 0,
+          priceRs: 0,
+          features: [
+            '2 GB RAM',
+            '100% CPU',
+            '4096 MB Disk',
+            'DDoS Protection',
+            '24/7 Support (Discord)',
+            '1 Month Free Trial'
+          ],
+          icon: 'Gift',
+          code: 'mc_trial',
+          isTrial: true,
+          redirect: null, // No redirect - will be handled via API
+          description: 'Try our hosting free for a month! Perfect for testing or starting your Minecraft community.'
+        },
+        {
           name: 'The Single Shot',
           tokens: 3,
-          priceRs: 200,
+          priceRs: 240,
           features: [
             '2 GB RAM',
             '100% CPU',
@@ -121,7 +136,7 @@ export const founders = [
         {
           name: 'The Double Shot',
           tokens: 5,
-          priceRs: 300,
+          priceRs: 360,
           features: [
             '3 GB RAM',
             '150% CPU',
@@ -137,7 +152,7 @@ export const founders = [
         {
           name: 'The Latte',
           tokens: 8,
-          priceRs: 400,
+          priceRs: 480,
           features: [
             '4 GB RAM',
             '200% CPU',
@@ -152,7 +167,7 @@ export const founders = [
         {
           name: 'The Americano',
           tokens: 11,
-          priceRs: 600,
+          priceRs: 649,
           features: [
             '6 GB RAM',
             '300% CPU',
@@ -166,7 +181,7 @@ export const founders = [
         },
         {
           name: 'The Frappuccino',
-          priceRs: 800,
+          priceRs: 850,
           features: [
             '8 GB RAM',
             '400% CPU',
@@ -327,4 +342,3 @@ export const founders = [
       description: 'Easily upgrade your plan as your community grows.'
     }
   ];
-  
