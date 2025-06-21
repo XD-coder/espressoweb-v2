@@ -35,7 +35,6 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
     setErrorMessage('');
     onClose();
   };
-
   const renderContent = () => {
     if (claimStatus === 'success') {
       return (
@@ -50,7 +49,8 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
           <div className="flex justify-center">
             <button
               onClick={handleClose}
-              className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-6 rounded-lg"
+              className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-6 rounded-lg z-[30001]"
+              style={{ position: 'relative', pointerEvents: 'auto' }}
             >
               Done
             </button>
@@ -70,7 +70,8 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
           <div className="flex justify-center">
             <button
               onClick={handleClose}
-              className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg"
+              className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg z-[30001]"
+              style={{ position: 'relative', pointerEvents: 'auto' }}
             >
               Close
             </button>
@@ -84,13 +85,14 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
           <p className="text-gray-600 mb-6">
             You're about to claim a 1-month free trial of our {planName} hosting plan. This includes 2GB RAM, 4GB storage, and all features of our paid plans.
           </p>
-          <div className="mb-6">
+          <div className="mb-6 relative z-[30000]">
             <TrialClaim onSuccess={handleSuccess} onError={handleError} />
           </div>
           <div className="text-center">
             <button
               onClick={handleClose}
-              className="text-gray-600 hover:text-gray-800 font-medium"
+              className="text-gray-600 hover:text-gray-800 font-medium z-[30001]"
+              style={{ position: 'relative', pointerEvents: 'auto' }}
             >
               Cancel
             </button>
@@ -99,25 +101,38 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
       );
     }
   };
-
-  if (!mounted) return null;  return isOpen ? createPortal(
-    <div className="fixed inset-0 z-[9999] overflow-y-auto" style={{ pointerEvents: 'auto' }}>
+  if (!mounted) return null;  
+  
+  return isOpen ? createPortal(
+    <div className="fixed inset-0 z-[9999] overflow-y-auto">
       <div 
         className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center"
         onClick={handleClose} // Click anywhere outside the modal to close it
-        style={{ pointerEvents: 'auto' }}
       >
+        {/* Dark overlay */}
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
         
         <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
         
+        {/* Modal content */}
         <div 
-          className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full p-6 z-[10000]"
+          className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-[90%] p-6 z-[20000]"
           onClick={(e) => e.stopPropagation()} // Prevent clicks inside the modal from closing it
           style={{ pointerEvents: 'auto' }}
         >
+          {/* Close button */}
+          <button
+            onClick={handleClose}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none z-[20001]"
+            aria-label="Close modal"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+          
           {renderContent()}
         </div>
       </div>

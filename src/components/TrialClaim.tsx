@@ -34,8 +34,8 @@ export default function TrialClaim({ onSuccess, onError }: TrialClaimProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: userEmail,
-          promo: 'trial100'
+          "email": userEmail,
+          "promo": 'trial100'
         }),
       });
 
@@ -54,8 +54,7 @@ export default function TrialClaim({ onSuccess, onError }: TrialClaimProps) {
     } finally {
       setIsProcessing(false);
     }
-  };
-  return (
+  };  return (
     <button
       type="button"
       onClick={(e) => {
@@ -64,8 +63,12 @@ export default function TrialClaim({ onSuccess, onError }: TrialClaimProps) {
         claimTrial();
       }}
       disabled={isProcessing || !isSignedIn}
-      style={{ pointerEvents: 'auto', cursor: isProcessing || !isSignedIn ? 'not-allowed' : 'pointer' }}
-      className={`w-full bg-gradient-to-r from-primary-600 to-accent-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex justify-center items-center z-[10001] ${
+      style={{ 
+        pointerEvents: 'auto', 
+        cursor: isProcessing || !isSignedIn ? 'not-allowed' : 'pointer',
+        position: 'relative'
+      }}
+      className={`w-full bg-gradient-to-r from-primary-600 to-accent-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex justify-center items-center z-[30000] ${
         isProcessing || !isSignedIn ? 'opacity-70' : ''
       }`}
     >

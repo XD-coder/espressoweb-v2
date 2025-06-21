@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="w-full bg-primary-200 text-white shadow-lg">
-      {/* Promotional Banner */}
+      {/* Promotional Banner
       <motion.div
         className="text-center py-2 text-sm bg-red-600 font-medium"
         initial={{ scale: 1 }}
@@ -28,7 +28,7 @@ const Header = () => {
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
       >
         <p>🎉 Limited Time Offer: Get 20% off on all plans! ( Applied automatically at checkout )  🎉</p>
-      </motion.div>
+      </motion.div> */}
 
       {/* Main Header */}
       <motion.nav
