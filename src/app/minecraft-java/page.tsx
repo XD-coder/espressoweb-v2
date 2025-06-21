@@ -72,12 +72,12 @@ export default function MinecraftJava() {
               <div className="bg-primary-900 p-8 rounded-lg shadow-lg hover:transform hover:scale-105 transition-all duration-300">
                 <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white text-center mb-4">One-Click Installs</h3>
+                <h3 className="text-2xl font-bold text-white text-center mb-4">Full Customization</h3>
                 <p className="text-gray-300 text-center">
-                  Instantly install any Minecraft Java version, popular modpacks, or plugin collections with a single click.
+                  Upload any server JAR for any version. You have full control to install any modpack or plugin collection manually.
                 </p>
               </div>
               
@@ -239,7 +239,7 @@ export default function MinecraftJava() {
               <div className="bg-primary-900 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-white mb-3">Can I install Forge on my Minecraft Java server?</h3>
                 <p className="text-gray-300">
-                  Yes! All our Java Edition hosting plans fully support Forge installation. You can install Forge with a single click through our control panel, or manually upload your preferred Forge version. We support all major Forge versions for different Minecraft releases.
+                  Yes! All our Java Edition hosting plans fully support Forge. You can upload your preferred Forge version and any mods directly to your server via our file manager or SFTP. This gives you complete control over your modded Minecraft experience.
                 </p>
               </div>
               
@@ -253,7 +253,7 @@ export default function MinecraftJava() {
               <div className="bg-primary-900 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-white mb-3">Can I switch between different Minecraft Java versions?</h3>
                 <p className="text-gray-300">
-                  Absolutely! Our control panel makes it easy to switch between any Minecraft Java version with just a few clicks. You can easily upgrade or downgrade your server version, though remember that world data might not be compatible between all versions.
+                  Absolutely! You have full freedom to switch between Minecraft versions. Simply upload the server JAR file for the desired version to your server directory. Remember to back up your world data, as compatibility is not guaranteed between all versions.
                 </p>
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function MinecraftJava() {
       </main>
       <Footer />
       
-      {/* Structured data for FAQ */}
+      {/* Structured data for FAQ and HowTo */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -283,7 +283,7 @@ export default function MinecraftJava() {
                 "name": "Can I install Forge on my Minecraft Java server?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes! All our Java Edition hosting plans fully support Forge installation. You can install Forge with a single click through our control panel, or manually upload your preferred Forge version. We support all major Forge versions for different Minecraft releases."
+                  "text": "Yes! All our Java Edition hosting plans fully support Forge. You can upload your preferred Forge version and any mods directly to your server via our file manager or SFTP. This gives you complete control over your modded Minecraft experience."
                 }
               },
               {
@@ -299,8 +299,52 @@ export default function MinecraftJava() {
                 "name": "Can I switch between different Minecraft Java versions?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Absolutely! Our control panel makes it easy to switch between any Minecraft Java version with just a few clicks. You can easily upgrade or downgrade your server version, though remember that world data might not be compatible between all versions."
+                  "text": "Absolutely! You have full freedom to switch between Minecraft versions. Simply upload the server JAR file for the desired version to your server directory. Remember to back up your world data, as compatibility is not guaranteed between all versions."
                 }
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Set Up a Custom Minecraft Java Edition Server",
+            "description": "A step-by-step guide to setting up a fully customized Minecraft Java Edition server on our hosting platform.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Choose a Hosting Plan",
+                "text": "Select a hosting plan that fits your needs based on player slots and RAM.",
+                "url": "https://espressohost.xyz/plans"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Access Your Server Control Panel",
+                "text": "Once your plan is active, log in to our custom control panel to manage your server."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Download Your Desired Server JAR",
+                "text": "Download the specific Minecraft Java Edition server JAR file (e.g., Paper, Spigot, Forge, or Vanilla) from its official website."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Upload the JAR File",
+                "text": "Use the file manager in our control panel or an SFTP client to upload the JAR file to your server's main directory."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Configure and Start Your Server",
+                "text": "Rename the uploaded JAR to 'server.jar' or update the startup script to point to your custom JAR file. Start the server and accept the EULA."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Connect to Your Server",
+                "text": "Find your server's IP address in the control panel and connect to it through the Minecraft client."
               }
             ]
           })

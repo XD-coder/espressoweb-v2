@@ -7,15 +7,15 @@ import Footer from '../components/Footer';
 
 // Metadata for this specific page
 export const metadata = {
-  title: 'Minecraft Servers | Java Edition & Forge Server Hosting | Espresso Hosting',
-  description: 'Your go-to for High performance and cheap Minecraft servers. Minecraft Java Edition server hosting with one-click mod installations for Forge, modded Minecraft, and vanilla servers!',
-  keywords: 'minecraft servers, minecraft java edition servers, server hosting minecraft, forge server hosting minecraft, modded minecraft, minecraft server hosting, paper minecraft server, cheap minecraft hosting, minecraft server plans, espresso hosting, minecraft java edition, forge minecraft servers, modded minecraft server hosting, minecraft server hosting with mods, minecraft server hosting with plugins, minecraft server hosting with forge, minecraft servers free trial',
+  title: 'Minecraft Server Hosting | Java & Modded | Espresso Hosting',
+  description: 'High-performance Minecraft server hosting. Full control to upload your own JARs for Java Edition, Forge, Fabric, and any modded server. Get started with PaperMC by default.',
+  keywords: 'minecraft server hosting, minecraft java server hosting, custom minecraft server, forge server hosting, modded minecraft server, paper mc server, cheap minecraft hosting, minecraft server plans, espresso hosting, minecraft java edition, upload custom jar',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Espresso Hosting | minecraft servers',
-    description: 'Your go-to for High performance and cheap game server hosting.',
+    title: 'Espresso Hosting | Customizable Minecraft Server Hosting',
+    description: 'High-performance and flexible Minecraft server hosting. Upload your own JARs and mods for complete control.',
     url: 'https://espressohost.xyz',
     images: [
       {
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Espresso Hosting | minecraft servers',
-    description: 'Your go-to for High performance and cheap game server hosting.',
+    title: 'Espresso Hosting | Customizable Minecraft Server Hosting',
+    description: 'High-performance and flexible Minecraft server hosting. Upload your own JARs and mods for complete control.',
     images: ['https://opengraph.b-cdn.net/production/images/f070a378-9002-47f0-add3-3b44515d33e8.png?token=728-gfamY_EGIxiH6W1RMEP47tF5-dXAhvcnNu4YyRE&height=1200&width=1200&expires=33286319952'],
   }
 };
@@ -89,27 +89,26 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-3">Java Edition Server Hosting</h3>
               <p className="text-gray-300 mb-4">
                 Our optimized Minecraft Java Edition server hosting provides the perfect platform for your community. 
-                Run the official Java version with support for all major versions from 1.8 to the latest 1.21 update.
+                Our servers default to PaperMC for the best performance, but you can upload any server JAR you prefer.
               </p>
               <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Full support for plugin APIs like Spigot, Paper, and Purpur</li>
-                <li>One-click version switching between all major Minecraft versions</li>
-                <li>Custom JAR support for specialized server types</li>
+                <li>Manually switch between any Minecraft version by uploading the JAR</li>
                 <li>Full file access via SFTP and our browser-based file manager</li>
+                <li>Complete control over your server environment</li>
               </ul>
             </div>
             
             <div className="bg-primary-800 p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-3">Forge Server Hosting</h3>
               <p className="text-gray-300 mb-4">
-                Host your modded Minecraft server with our specialized Forge server hosting. We support all popular 
-                Forge versions, making it easy to build the perfect modded gameplay experience.
+                Host your modded Minecraft server with our flexible Forge server hosting. We give you the freedom to upload any Forge version and modpack, giving you full control.
               </p>
               <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                <li>One-click installation of popular modpacks like FTB, ATM, and Create</li>
-                <li>Automatic mod dependency resolution and conflict detection</li>
-                <li>Optimized server settings for heavily modded environments</li>
-                <li>Extra RAM allocations available for resource-intensive modpacks</li>
+                <li>Install any modpack by uploading its server files</li>
+                <li>Optimized hardware for heavily modded environments</li>
+                <li>Full control to configure mods and server settings</li>
+                <li>Ample RAM and NVMe SSDs for resource-intensive modpacks</li>
               </ul>
             </div>
           </div>
@@ -153,21 +152,21 @@ export default function Home() {
             <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">How do I start my own Minecraft Java Edition server?</h3>
               <p className="text-gray-300">
-                Starting your Minecraft Java Edition server with Espresso Hosting is simple. Select a hosting plan that matches your needs, complete the checkout process, and your server will be instantly deployed. Our control panel allows you to select your preferred Minecraft version, install plugins or mods with one click, and start your server within minutes. No technical knowledge required!
+                Starting your server is simple. Select a plan, complete checkout, and your server is instantly deployed with PaperMC by default. You can then use our control panel and file manager to upload any server JAR (like Forge or a specific Spigot version) and configure it to your liking. You have full control from the start.
               </p>
             </div>
             
             <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Which Minecraft server type is best for mods?</h3>
               <p className="text-gray-300">
-                For modded Minecraft, Forge server hosting is the most popular and widely compatible option. Forge allows you to install a vast library of mods, from small gameplay tweaks to complete overhauls. Our Forge server hosting automates the installation process, handling all the technical aspects of setting up a modded server. We also support Fabric for lightweight modding and specialized modpacks.
+                For modded Minecraft, Forge is the most popular choice. Our hosting platform is ideal for Forge as it gives you complete control. You can upload any Forge version and any modpack you want. We also fully support Fabric and other mod loaders—just upload the server files and run them.
               </p>
             </div>
             
             <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Can I run plugins on my Minecraft server?</h3>
               <p className="text-gray-300">
-                Yes! All our Minecraft server hosting plans support plugins through various server types including Spigot, Paper, and Purpur. You can easily install popular plugins like Essentials, WorldEdit, GriefPrevention, and thousands more through our one-click installer or by uploading custom plugins. Our Paper MC servers offer the best balance of performance and plugin compatibility.
+                Yes! Our servers default to PaperMC, which is highly optimized for plugins and supports most Spigot and Bukkit plugins. You can easily upload any plugins to the `plugins` folder using our file manager. If you choose to run a different server type like Spigot or Purpur, you can do that too.
               </p>
             </div>
             

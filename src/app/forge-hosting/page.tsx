@@ -5,29 +5,29 @@ import Image from 'next/image';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Forge Server Hosting Minecraft | Modded Minecraft Servers",
-  description: "Premium Forge server hosting for modded Minecraft. Easy one-click installation of popular modpacks, 24/7 expert support, and high-performance hardware for smooth gameplay.",
-  keywords: "forge server hosting minecraft, modded minecraft, minecraft servers, modded minecraft server, minecraft forge hosting, ftb server hosting, custom modpack hosting",
-  alternates: {
+  title: "Forge Server Hosting | Fully Customizable Modded Minecraft",
+  description: "Flexible Forge server hosting for modded Minecraft. Upload any modpack or JAR file for full control. High-performance hardware for smooth, customizable gameplay.",
+  keywords: "forge server hosting, modded minecraft server hosting, custom minecraft server, upload forge jar, minecraft java server, custom modpack hosting, paper mc server",
+  alternates: { 
     canonical: '/forge-hosting',
   },
   openGraph: {
-    title: "Forge Server Hosting Minecraft | Modded Minecraft Servers",
-    description: "Your go-to for High performance and cheap Forge server hosting with modpack installations and expert modded Minecraft support.",
+    title: "Forge Server Hosting | Fully Customizable Modded Minecraft",
+    description: "High-performance, flexible Forge server hosting. Upload your own JARs and modpacks for complete control over your modded Minecraft experience.",
     url: 'https://espressohost.xyz/forge-hosting',
     images: [
       {
         url: 'https://opengraph.b-cdn.net/production/images/f070a378-9002-47f0-add3-3b44515d33e8.png?token=728-gfamY_EGIxiH6W1RMEP47tF5-dXAhvcnNu4YyRE&height=1200&width=1200&expires=33286319952',
         width: 1200,
         height: 1200,
-        alt: 'Forge Server Hosting - Espresso Hosting',
+        alt: 'Customizable Forge Server Hosting - Espresso Hosting',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Forge Server Hosting Minecraft | Modded Minecraft Servers',
-    description: 'Your go-to for High performance and cheap Forge server hosting for modded Minecraft.',
+    title: 'Forge Server Hosting | Fully Customizable Modded Minecraft',
+    description: 'Flexible and powerful Forge server hosting. Bring your own mods, and enjoy full server control.',
     images: ['https://opengraph.b-cdn.net/production/images/f070a378-9002-47f0-add3-3b44515d33e8.png?token=728-gfamY_EGIxiH6W1RMEP47tF5-dXAhvcnNu4YyRE&height=1200&width=1200&expires=33286319952'],
   }
 };
@@ -43,21 +43,20 @@ export default function ForgeHosting() {
           <div className="container mx-auto px-6 relative z-10 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Forge Server Hosting</h1>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              Run your modded Minecraft server with our high-performance Forge hosting. 
-              Support for all popular modpacks and custom configurations.
+              Total control over your modded Minecraft server. Upload any Forge version, modpack, or custom JARs.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
                 href="/plans"
                 className="bg-accent-500 hover:bg-accent-600 text-primary-950 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300"
               >
-                View Forge Hosting Plans
+                View Hosting Plans
               </Link>
               <Link
-                href="#modpacks"
+                href="#setup-guide"
                 className="bg-transparent border-2 border-primary-500 text-primary-500 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-primary-500 hover:text-white"
               >
-                Supported Modpacks
+                Setup Guide
               </Link>
             </div>
           </div>
@@ -72,12 +71,12 @@ export default function ForgeHosting() {
               <div className="bg-primary-900 p-8 rounded-lg shadow-lg transition-all duration-300 hover:transform hover:scale-105">
                 <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10m0 0h16M4 17a2 2 0 002 2h12a2 2 0 002-2M4 7a2 2 0 012-2h4l2-3h4l2 3h4a2 2 0 012 2" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white text-center mb-4">One-Click Modpacks</h3>
+                <h3 className="text-2xl font-bold text-white text-center mb-4">Full Customization</h3>
                 <p className="text-gray-300 text-center">
-                  Install popular modpacks like FTB, All The Mods, Create, and many more with a single click. No complex setup required.
+                  Upload any server JAR, including specific Forge versions, Fabric, or custom modpacks. You have complete control.
                 </p>
               </div>
               
@@ -89,7 +88,7 @@ export default function ForgeHosting() {
                 </div>
                 <h3 className="text-2xl font-bold text-white text-center mb-4">Optimized for Mods</h3>
                 <p className="text-gray-300 text-center">
-                  Servers configured specifically for modded Minecraft with optimized Java arguments and performance settings.
+                  Our servers are equipped with high-performance hardware and optimized Java arguments, ideal for any modded server.
                 </p>
               </div>
               
@@ -99,9 +98,9 @@ export default function ForgeHosting() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white text-center mb-4">Automatic Backups</h3>
+                <h3 className="text-2xl font-bold text-white text-center mb-4">Full File Access</h3>
                 <p className="text-gray-300 text-center">
-                  Regular automated backups of your modded world and server files to prevent any data loss.
+                  Get complete SFTP and file manager access to manage your server files, mods, and configurations with ease.
                 </p>
               </div>
             </div>
@@ -111,7 +110,10 @@ export default function ForgeHosting() {
         {/* Modpack Support Section */}
         <section id="modpacks" className="py-20 bg-primary-900">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-white text-center mb-16">Supported Modpacks</h2>
+            <h2 className="text-4xl font-bold text-white text-center mb-16">Run Any Modpack</h2>
+            <p className="text-center text-gray-300 max-w-3xl mx-auto mb-12">
+              While we don't offer a one-click installer, our platform gives you the freedom to run any modpack you desire. Simply upload the server files for your favorite pack, and you're ready to go. We support all popular modpacks, including:
+            </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -129,11 +131,11 @@ export default function ForgeHosting() {
                 "Crazy Craft",
                 "Direwolf20",
                 "FTB Academy",
-                "Custom Modpacks"
+                "And any other pack!"
               ].map((modpack) => (
                 <div key={modpack} className="bg-primary-800 p-6 rounded-lg hover:bg-primary-700 transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-2">{modpack}</h3>
-                  <p className="text-gray-300 text-sm">One-click installation</p>
+                  <p className="text-gray-300 text-sm">Manual installation via file upload</p>
                 </div>
               ))}
             </div>
@@ -287,17 +289,24 @@ export default function ForgeHosting() {
             <h2 className="text-4xl font-bold text-white text-center mb-16">Forge Hosting FAQ</h2>
             
             <div className="max-w-3xl mx-auto space-y-8">
-              <div className="bg-primary-900 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-white mb-3">How do I install a custom modpack?</h3>
+               <div className="bg-primary-900 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-white mb-3">How do I install Forge or a modpack?</h3>
                 <p className="text-gray-300">
-                  Installing a custom modpack is easy. You can either use our one-click installer for popular modpacks, or upload your own mods via our file manager. For CurseForge or FTB modpacks, you can simply provide the pack ID or upload the zip file, and our system will handle the installation automatically.
+                  Our servers default to PaperMC for optimal performance. To use Forge, you need to upload the Forge installer JAR file and your modpack files via SFTP or our file manager. You have full control to install any server type or version you need. Check our setup guide for detailed instructions.
                 </p>
               </div>
-              
+
+              <div className="bg-primary-900 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-white mb-3">Is there a one-click mod installer?</h3>
+                <p className="text-gray-300">
+                  Currently, we do not offer a one-click mod or modpack installer. This approach gives you maximum flexibility to install any version of Forge, Fabric, or any custom modpack without limitations. You simply upload the server files you wish to run.
+                </p>
+              </div>
+
               <div className="bg-primary-900 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-white mb-3">Which Forge versions are supported?</h3>
                 <p className="text-gray-300">
-                  We support all major Forge versions for Minecraft 1.7.10 through the latest release. This includes popular versions like 1.12.2, 1.16.5, 1.18.2, and 1.20.1. You can easily switch between different Forge versions through our control panel.
+                  You can run any version of Forge. Since you upload the server files yourself, you are not limited by a predefined list. Whether you need an older version like 1.7.10 or the very latest release, you can run it on our platform.
                 </p>
               </div>
               
@@ -310,14 +319,7 @@ export default function ForgeHosting() {
                 <div className="bg-primary-900 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-white mb-3">Do you offer support for configuring mods?</h3>
                 <p className="text-gray-300">
-                  Yes! Our support team is experienced with many popular mods and modpacks. While we can't help with every single mod due to the vast number available, we're always ready to assist with common configuration issues, performance optimization, and troubleshooting.
-                </p>
-              </div>
-
-              <div className="bg-primary-900 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-white mb-3">How do I install Forge on my Minecraft server?</h3>
-                <p className="text-gray-300">
-                  With our hosting platform, installing Forge is incredibly simple. When creating your server, select "Forge" as your server type in the control panel, then choose your preferred Minecraft version. Our system will automatically download and install the recommended Forge version for that Minecraft release. Alternatively, you can manually upload any specific Forge version through our file manager.
+                  Yes! Our support team is experienced with modded servers. While we can't configure every mod for you, we can help with server setup, performance optimization, and troubleshooting common issues related to Forge and modpacks.
                 </p>
               </div>
 
@@ -346,9 +348,9 @@ export default function ForgeHosting() {
         </section>
 
         {/* Forge Server Setup Guidelines - SEO Optimized */}
-        <section className="py-20 bg-primary-900">
+        <section id="setup-guide" className="py-20 bg-primary-900">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-white text-center mb-16">Forge Server Setup Guidelines</h2>
+            <h2 className="text-4xl font-bold text-white text-center mb-16">Forge Server Setup Guide</h2>
             
             <div className="grid md:grid-cols-2 gap-12">
               <div>
@@ -361,7 +363,7 @@ export default function ForgeHosting() {
                     <div>
                       <h4 className="text-xl font-semibold text-white mb-2">Choose the Right Plan</h4>
                       <p className="text-gray-300">
-                        Select a hosting plan based on your modpack size. For small modpacks (0-50 mods), our Espresso plan with 4GB RAM works well. For medium modpacks (50-100 mods), choose the Latte plan with 6GB RAM. Larger modpacks with 100+ mods need at least 8GB RAM from our Americano plan.
+                        Select a hosting plan based on your modpack size. For small modpacks (under 50 mods), 4GB of RAM is a good start. For larger packs (100+ mods), we recommend 8GB or more for the best experience.
                       </p>
                     </div>
                   </li>
@@ -371,9 +373,9 @@ export default function ForgeHosting() {
                       <span className="font-bold text-primary-950">2</span>
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white mb-2">Install Forge</h4>
+                      <h4 className="text-xl font-semibold text-white mb-2">Upload Server Files</h4>
                       <p className="text-gray-300">
-                        After ordering, log into your control panel and select "Forge" as your server type. Choose your Minecraft version (1.12.2, 1.16.5, 1.18.2, and 1.20.1 are popular for mods), and our system will automatically install the compatible Forge version.
+                        Download the Forge installer and your desired modpack files. Use our file manager or SFTP to upload the Forge JAR and all modpack contents to your server directory.
                       </p>
                     </div>
                   </li>
@@ -383,9 +385,9 @@ export default function ForgeHosting() {
                       <span className="font-bold text-primary-950">3</span>
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white mb-2">Install Your Modpack</h4>
+                      <h4 className="text-xl font-semibold text-white mb-2">Run the Forge Installer</h4>
                       <p className="text-gray-300">
-                        For popular modpacks, use our one-click installer to add FTB, All The Mods, RLCraft, and other packs instantly. For custom modpacks, use our file manager to upload mod files to the "mods" folder or upload a ZIP of the entire modpack.
+                        Set your server's startup command to run the Forge installer JAR. Once it completes, change the startup command to run the newly created `forge-*.jar` file to launch your server.
                       </p>
                     </div>
                   </li>
@@ -402,7 +404,7 @@ export default function ForgeHosting() {
                     <div>
                       <h4 className="text-xl font-semibold text-white mb-2">Configure Server Settings</h4>
                       <p className="text-gray-300">
-                        Access server.properties through our file manager to adjust view-distance (6-10 is recommended for modded servers), spawn-protection, and other settings. For modpack-specific configurations, check the modpack documentation or our knowledge base for optimization guides.
+                        Access `server.properties` via the file manager to adjust settings like view-distance (6-8 is recommended for modded servers). Refer to your modpack's documentation for specific configuration advice.
                       </p>
                     </div>
                   </li>
@@ -414,7 +416,7 @@ export default function ForgeHosting() {
                     <div>
                       <h4 className="text-xl font-semibold text-white mb-2">Adjust Java Arguments</h4>
                       <p className="text-gray-300">
-                        Our system automatically applies optimized Java arguments for your server's RAM allocation, but you can fine-tune these through the Startup Parameters section in your control panel. Adding performance mods like Aikar's flags can further enhance server performance.
+                        Our system applies optimized Java arguments by default. You can fine-tune these in the Startup Parameters section of the control panel to match your modpack's needs.
                       </p>
                     </div>
                   </li>
@@ -426,7 +428,7 @@ export default function ForgeHosting() {
                     <div>
                       <h4 className="text-xl font-semibold text-white mb-2">Add Performance Mods</h4>
                       <p className="text-gray-300">
-                        Consider adding performance-enhancing mods like FoamFix, AI Improvements, or Clumps to your modpack. These mods can significantly improve server performance without changing gameplay. Our support team can recommend the best performance mods for your specific Minecraft and Forge version.
+                        Consider adding server-side performance mods like Canary or RoadRunner to your `mods` folder. These can significantly improve performance without altering gameplay.
                       </p>
                     </div>
                   </li>
@@ -470,8 +472,8 @@ export default function ForgeHosting() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": "Forge Minecraft Server Hosting",
-            "description": "Premium Forge server hosting for modded Minecraft with one-click modpack installation, high-performance hardware, and 24/7 support.",
+            "name": "Customizable Forge Minecraft Server Hosting",
+            "description": "Flexible and powerful Forge server hosting for modded Minecraft. Upload any modpack or JAR file for full control and high-performance gameplay.",
             "brand": {
               "@type": "Brand",
               "name": "Espresso Hosting"
@@ -492,12 +494,13 @@ export default function ForgeHosting() {
               },
               "author": {
                 "@type": "Person",
-                "name": "Minecraft Community"
+                "name": "Modded Minecraft Player"
               }
             }
           })
         }}
-      />      {/* Structured data for FAQ */}
+      />
+      {/* Structured data for FAQ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -507,10 +510,18 @@ export default function ForgeHosting() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "How do I install a custom modpack?",
+                "name": "How do I install Forge or a modpack?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Installing a custom modpack is easy. You can either use our one-click installer for popular modpacks, or upload your own mods via our file manager. For CurseForge or FTB modpacks, you can simply provide the pack ID or upload the zip file, and our system will handle the installation automatically."
+                  "text": "Our servers default to PaperMC for optimal performance. To use Forge, you need to upload the Forge installer JAR file and your modpack files via SFTP or our file manager. You have full control to install any server type or version you need."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a one-click mod installer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Currently, we do not offer a one-click mod or modpack installer. This approach gives you maximum flexibility to install any version of Forge, Fabric, or any custom modpack without limitations. You simply upload the server files you wish to run."
                 }
               },
               {
@@ -518,7 +529,7 @@ export default function ForgeHosting() {
                 "name": "Which Forge versions are supported?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "We support all major Forge versions for Minecraft 1.7.10 through the latest release. This includes popular versions like 1.12.2, 1.16.5, 1.18.2, and 1.20.1. You can easily switch between different Forge versions through our control panel."
+                  "text": "You can run any version of Forge. Since you upload the server files yourself, you are not limited by a predefined list. Whether you need an older version like 1.7.10 or the very latest release, you can run it on our platform."
                 }
               },
               {
@@ -526,7 +537,7 @@ export default function ForgeHosting() {
                 "name": "Can I add more RAM to my Forge server later?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Absolutely! You can upgrade your server's RAM at any time through your client area. The upgrade is applied instantly, and your server will restart with the new resources. This is perfect if you start with a smaller modpack and want to add more mods later."
+                  "text": "Absolutely! You can upgrade your server's RAM at any time through your client area. The upgrade is applied instantly, and your server will restart with the new resources."
                 }
               },
               {
@@ -534,149 +545,55 @@ export default function ForgeHosting() {
                 "name": "Do you offer support for configuring mods?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes! Our support team is experienced with many popular mods and modpacks. While we can't help with every single mod due to the vast number available, we're always ready to assist with common configuration issues, performance optimization, and troubleshooting."
+                  "text": "Yes! Our support team is experienced with modded servers. While we can't configure every mod for you, we can help with server setup, performance optimization, and troubleshooting common issues related to Forge and modpacks."
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I install Forge on my Minecraft server?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "With our hosting platform, installing Forge is incredibly simple. When creating your server, select 'Forge' as your server type in the control panel, then choose your preferred Minecraft version. Our system will automatically download and install the recommended Forge version for that Minecraft release. Alternatively, you can manually upload any specific Forge version through our file manager."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How much does Forge server hosting cost?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Our Forge server hosting plans start at ₹299/month for the Espresso plan (4GB RAM), suitable for small modpacks. For medium modpacks, we recommend our Latte plan at ₹399/month (6GB RAM), while larger modpacks like All The Mods are best on our Americano plan at ₹599/month (8GB RAM). Each plan includes unlimited SSD storage, DDoS protection, and 24/7 support."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What's the difference between Forge and Fabric for Minecraft modding?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Forge is the most widely used modding platform with extensive compatibility for thousands of mods across many Minecraft versions. It supports larger, more complex modifications. Fabric is a lighter, more modern alternative that often updates faster for new Minecraft versions but has fewer available mods. We support both, though Forge remains more popular for fully featured modded experiences."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I use my existing world with a Forge server?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes! You can upload your existing Minecraft world to our Forge server through our file manager or SFTP access. Simply compress your world folder to a ZIP archive, upload it to your server, and extract it to the correct location. Keep in mind that converting a vanilla world to a heavily modded one may cause some generation issues in unexplored chunks, but pre-existing areas will remain intact."
-                }
-              }            ]
+              }
+            ]
           })
         }}
       />
-      
-      {/* Structured data for HowTo Schema */}
+      {/* How-To Schema for setting up a Forge Server */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "HowTo",
-            "name": "How to Set Up a Forge Minecraft Server",
-            "description": "A step-by-step guide to setting up and optimizing your Forge Minecraft server for modded gameplay.",
-            "totalTime": "PT30M",
-            "tool": [
-              {
-                "@type": "HowToTool",
-                "name": "Espresso Hosting Control Panel"
-              },
-              {
-                "@type": "HowToTool",
-                "name": "Minecraft Forge Installer"
-              },
-              {
-                "@type": "HowToTool",
-                "name": "File Manager or SFTP Client"
-              }
-            ],
+            "name": "How to Set Up a Forge Server",
+            "description": "A step-by-step guide to setting up your own modded Minecraft server using Forge.",
             "step": [
               {
                 "@type": "HowToStep",
                 "name": "Choose the Right Plan",
-                "text": "Select a hosting plan based on your modpack size. For small modpacks (0-50 mods), our Espresso plan with 4GB RAM works well. For medium modpacks (50-100 mods), choose the Latte plan with 6GB RAM. Larger modpacks with 100+ mods need at least 8GB RAM from our Americano plan.",
-                "url": "https://espressohost.xyz/plans",
-                "image": "https://espressohost.xyz/hero-image.png"
+                "text": "Select a hosting plan based on your modpack size. For small modpacks (under 50 mods), 4GB of RAM is a good start. For larger packs (100+ mods), we recommend 8GB or more.",
+                "url": "https://espressohost.xyz/plans"
               },
               {
                 "@type": "HowToStep",
-                "name": "Install Forge",
-                "text": "After ordering, log into your control panel and select \"Forge\" as your server type. Choose your Minecraft version (1.12.2, 1.16.5, 1.18.2, and 1.20.1 are popular for mods), and our system will automatically install the compatible Forge version.",
-                "url": "https://espressohost.xyz/forge-hosting#installation",
-                "image": "https://espressohost.xyz/hero-image.png"
+                "name": "Upload Server Files",
+                "text": "Download the Forge installer and your desired modpack files. Use our file manager or SFTP to upload the Forge JAR and all modpack contents to your server directory."
               },
               {
                 "@type": "HowToStep",
-                "name": "Install Your Modpack",
-                "text": "For popular modpacks, use our one-click installer to add FTB, All The Mods, RLCraft, and other packs instantly. For custom modpacks, use our file manager to upload mod files to the \"mods\" folder or upload a ZIP of the entire modpack.",
-                "url": "https://espressohost.xyz/forge-hosting#modpacks",
-                "image": "https://espressohost.xyz/hero-image.png"
+                "name": "Run the Forge Installer",
+                "text": "Set your server's startup command to run the Forge installer JAR. Once it completes, change the startup command to run the newly created forge-*.jar file to launch your server."
               },
               {
                 "@type": "HowToStep",
                 "name": "Configure Server Settings",
-                "text": "Access server.properties through our file manager to adjust view-distance (6-10 is recommended for modded servers), spawn-protection, and other settings. For modpack-specific configurations, check the modpack documentation or our knowledge base for optimization guides.",
-                "url": "https://espressohost.xyz/forge-hosting#optimization",
-                "image": "https://espressohost.xyz/hero-image.png"
+                "text": "Access server.properties via the file manager to adjust settings like view-distance. Refer to your modpack's documentation for specific configuration advice."
               },
               {
                 "@type": "HowToStep",
                 "name": "Adjust Java Arguments",
-                "text": "Our system automatically applies optimized Java arguments for your server's RAM allocation, but you can fine-tune these through the Startup Parameters section in your control panel. Adding performance mods like Aikar's flags can further enhance server performance.",
-                "url": "https://espressohost.xyz/forge-hosting#optimization",
-                "image": "https://espressohost.xyz/hero-image.png"
+                "text": "Fine-tune Java arguments in the Startup Parameters section of the control panel to match your modpack's needs."
               },
               {
                 "@type": "HowToStep",
                 "name": "Add Performance Mods",
-                "text": "Consider adding performance-enhancing mods like FoamFix, AI Improvements, or Clumps to your modpack. These mods can significantly improve server performance without changing gameplay. Our support team can recommend the best performance mods for your specific Minecraft and Forge version.",
-                "url": "https://espressohost.xyz/forge-hosting#optimization",
-                "image": "https://espressohost.xyz/hero-image.png"
+                "text": "Consider adding server-side performance mods like Canary or RoadRunner to your mods folder to improve performance."
               }
             ]
-          })
-        }}
-      />
-      
-      {/* Structured data for Product */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Forge Minecraft Server Hosting",
-            "description": "Premium Forge server hosting for modded Minecraft with one-click modpack installation, high-performance hardware, and 24/7 support.",
-            "brand": {
-              "@type": "Brand",
-              "name": "Espresso Hosting"
-            },
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "INR",
-              "lowPrice": "299",
-              "highPrice": "599",
-              "offerCount": "3"
-            },
-            "review": {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "4.8",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Person",
-                "name": "Minecraft Community"
-              }
-            }
           })
         }}
       />
