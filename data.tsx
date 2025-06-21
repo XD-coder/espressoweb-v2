@@ -106,7 +106,7 @@ export const founders = [
         {
           name: 'The Single Shot',
           tokens: 3,
-          priceRs: 200,
+          priceRs: 240,
           features: [
             '2 GB RAM',
             '100% CPU',
@@ -121,7 +121,7 @@ export const founders = [
         {
           name: 'The Double Shot',
           tokens: 5,
-          priceRs: 300,
+          priceRs: 360,
           features: [
             '3 GB RAM',
             '150% CPU',
@@ -137,7 +137,7 @@ export const founders = [
         {
           name: 'The Latte',
           tokens: 8,
-          priceRs: 400,
+          priceRs: 480,
           features: [
             '4 GB RAM',
             '200% CPU',
@@ -152,7 +152,7 @@ export const founders = [
         {
           name: 'The Americano',
           tokens: 11,
-          priceRs: 600,
+          priceRs: 649,
           features: [
             '6 GB RAM',
             '300% CPU',
@@ -166,7 +166,7 @@ export const founders = [
         },
         {
           name: 'The Frappuccino',
-          priceRs: 800,
+          priceRs: 850,
           features: [
             '8 GB RAM',
             '400% CPU',
