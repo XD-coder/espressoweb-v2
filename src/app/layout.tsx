@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Espresso Hosting | minecraft servers",
@@ -53,7 +54,7 @@ export default function RootLayout({
       </head>
       <body
         className={`antialiased bg-black`}
-      >
+      ><Analytics />
         <ClerkProvider afterSignUpUrl="/panel-setup">
           {children}
         </ClerkProvider>
