@@ -54,8 +54,9 @@ export default function RootLayout({
       </head>
       <body
         className={`antialiased bg-black`}
-      ><Analytics />
+      >
         <ClerkProvider afterSignUpUrl="/panel-setup">
+          <Analytics />
           {children}
         </ClerkProvider>
         
