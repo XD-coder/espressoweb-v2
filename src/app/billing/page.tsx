@@ -53,6 +53,15 @@ function BillingPage() {
       return;
     }
 
+    // Check if the plan price exceeds 500 rupees
+    if (plan.priceRs >= 500) {
+      setFeedbackMessage({
+        type: 'error',
+        text: 'Promo codes cannot be applied to plans costing ₹500 or more',
+      });
+      return;
+    }
+
     if (!user || !user.primaryEmailAddress) {
       setFeedbackMessage({
         type: 'error',
@@ -201,6 +210,17 @@ function BillingPage() {
             <div className="p-8 md:p-12 flex flex-col justify-between bg-white">
               <div>
                 <h3 className="text-3xl font-bold text-primary-900 mb-8 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text">Your Bill Summary</h3>
+                
+                {/* Promo Code Banner */}
+                <div className="mb-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                  <div className="flex items-center">
+                    <svg className="h-5 w-5 text-yellow-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                    <p className="text-yellow-700 font-medium">Promo codes are only applicable on orders below ₹500.</p>
+                  </div>
+                </div>
+                
                 <div className="space-y-6 text-lg">
                   <div className="flex justify-between items-center bg-primary-50 p-4 rounded-xl border border-primary-200">
                     <span className="text-primary-700 font-medium">Price:</span>
