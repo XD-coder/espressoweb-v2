@@ -58,18 +58,28 @@ const Header = () => {
           >
             Control Panel
           </a>
-        </div>
-
-        {/* Mobile Menu Button */}
+        </div>        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center">
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          <SignedOut>
-            <SignInButton />
-            <SignUpButton />
-          </SignedOut>
-          <button onClick={toggleMobileMenu} className="text-black focus:outline-none ml-4">
+          <div className="flex items-center mr-4">
+            <SignedIn>
+              <UserButton afterSignOutUrl="/" />
+            </SignedIn>
+            <SignedOut>
+              <div className="flex space-x-2">
+                <SignInButton mode="modal">
+                  <button className="bg-primary-600 text-white px-3 py-1 rounded-md text-sm">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="bg-accent-500 text-white px-3 py-1 rounded-md text-sm">
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </div>
+            </SignedOut>
+          </div>
+          <button onClick={toggleMobileMenu} className="text-black focus:outline-none">
             <svg
               className="w-8 h-8"
               fill="none"
@@ -86,15 +96,25 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        {/* login signup clerk */}
-
-        <div className="hidden md:flex text-primary-700 font-bold items-center space-x-4"><SignedIn>
-            <UserButton />
+        
+        {/* Desktop login signup clerk */}
+        <div className="hidden md:flex text-primary-700 font-bold items-center space-x-4">
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
           </SignedIn>
           <SignedOut>
-            <SignInButton />
-            <SignUpButton />
-          </SignedOut></div>
+            <SignInButton mode="modal">
+              <button className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md transition-colors">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button className="bg-accent-500 hover:bg-accent-600 text-white px-4 py-2 rounded-md transition-colors">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </SignedOut>
+        </div>
           
         
       </motion.nav>
