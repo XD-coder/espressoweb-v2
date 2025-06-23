@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useUser } from '@clerk/nextjs';
+import { motion } from 'framer-motion';
+import { Loader2, Gift, LogIn } from 'lucide-react';
 
 interface TrialClaimProps {
   onSuccess: () => void;
@@ -54,8 +56,9 @@ export default function TrialClaim({ onSuccess, onError }: TrialClaimProps) {
     } finally {
       setIsProcessing(false);
     }
-  };  return (
-    <button
+  };  
+    return (
+    <motion.button
       type="button"
       onClick={(e) => {
         e.preventDefault();
@@ -63,28 +66,67 @@ export default function TrialClaim({ onSuccess, onError }: TrialClaimProps) {
         claimTrial();
       }}
       disabled={isProcessing || !isSignedIn}
-      style={{ 
-        pointerEvents: 'auto', 
-        cursor: isProcessing || !isSignedIn ? 'not-allowed' : 'pointer',
-        position: 'relative'
-      }}
-      className={`w-full bg-gradient-to-r from-primary-600 to-accent-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex justify-center items-center z-[30000] ${
-        isProcessing || !isSignedIn ? 'opacity-70' : ''
-      }`}
+      whileHover={!isProcessing && isSignedIn ? { scale: 1.03 } : {}}
+      whileTap={!isProcessing && isSignedIn ? { scale: 0.97 } : {}}
+      className={`
+        relative w-full 
+        bg-gradient-to-r from-primary to-accent 
+        text-primary-foreground
+        font-medium text-sm sm:text-base
+        py-3 sm:py-3.5 px-4 sm:px-6
+        rounded-[var(--radius)]
+        flex justify-center items-center gap-2 sm:gap-2.5
+        transition-all duration-300
+        z-10
+        focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-background
+        ${
+          isProcessing || !isSignedIn 
+            ? 'opacity-70 cursor-not-allowed' 
+            : 'shadow-[var(--shadow)] hover:shadow-[var(--shadow-md)] hover:shadow-primary/20 cursor-pointer'
+        }
+      `}
+      aria-busy={isProcessing}
+      aria-label={
+        isProcessing 
+          ? "Processing trial claim" 
+          : !isSignedIn 
+            ? "Sign in to claim free trial" 
+            : "Claim free trial"
+      }
     >
       {isProcessing ? (
         <>
-          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          Processing...
+          <Loader2 className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
+          <span className="whitespace-nowrap">Processing...</span>
         </>
       ) : !isSignedIn ? (
-        'Sign in to Claim'
+        <>
+          <LogIn className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+          <span className="whitespace-nowrap">Sign in to Claim</span>
+        </>
       ) : (
-        'Claim Now'
+        <>
+          <Gift className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+          <span className="whitespace-nowrap">Claim Free Trial</span>
+        </>
       )}
-    </button>
+      
+      {/* Animated shine effect on hover */}
+      <div className="absolute inset-0 overflow-hidden rounded-[var(--radius)] pointer-events-none">
+        <motion.div 
+          className="absolute inset-0 opacity-0 bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full"
+          animate={!isProcessing && isSignedIn ? {
+            translateX: ["100%", "-100%"],
+            opacity: [0, 0.2, 0],
+          } : {}}
+          transition={{
+            duration: 1.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 1.5
+          }}
+        />
+      </div>
+    </motion.button>
   );
 }

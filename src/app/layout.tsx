@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "Espresso Hosting | minecraft servers",
@@ -45,20 +46,21 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
+}>) {  return (
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
-      <body
-        className={`antialiased bg-black`}
-      >
-        <ClerkProvider afterSignUpUrl="/panel-setup">
-          <Analytics />
-          {children}
-        </ClerkProvider>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+      </head>      <body className="antialiased bg-background text-foreground transition-colors duration-300">
+        <ThemeProvider>
+          <ClerkProvider afterSignUpUrl="/panel-setup">
+            <Analytics />
+            {children}
+          </ClerkProvider>
+        </ThemeProvider>
         
         {/* Structured data for better SEO */}
         <script
