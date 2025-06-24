@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/components/providers";
+import { inter, lora, firaCode } from './fonts';
 
 export const metadata: Metadata = {
   title: "Espresso Hosting | minecraft servers",
@@ -45,20 +47,19 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
+}>) {  return (
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${lora.variable} ${firaCode.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body
-        className={`antialiased bg-black`}
-      >
-        <ClerkProvider afterSignUpUrl="/panel-setup">
-          <Analytics />
-          {children}
-        </ClerkProvider>
+      <body className="antialiased bg-background text-foreground transition-colors duration-300 overflow-x-hidden font-sans">
+        <ThemeProvider>
+          <ClerkProvider afterSignUpUrl="/panel-setup">
+            <Analytics />
+            {children}
+          </ClerkProvider>
+        </ThemeProvider>
         
         {/* Structured data for better SEO */}
         <script
@@ -146,8 +147,7 @@ export default function RootLayout({
                 }
               ]
             })
-          }}
-        />
+          }}        />
       </body>
     </html>
   );

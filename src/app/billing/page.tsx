@@ -1,42 +1,45 @@
 'use client';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { useSearchParams } from 'next/navigation';
 import { gameCategories } from '../../../data';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
 
 function BillingPage() {
   const searchParams = useSearchParams();
   const incatagory = searchParams.get('catagory');
   const planCode = searchParams.get('plancode');
-  const Pcode= planCode;
-  const Router = useRouter();
   const [promoCodeInput, setPromoCodeInput] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState(0);
   const [finalPrice, setFinalPrice] = useState(0);
   const [feedbackMessage, setFeedbackMessage] = useState({ type: '', text: '' });
   const [promoRedirectUrl, setPromoRedirectUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { isSignedIn, user, isLoaded } = useUser();
 
-  // Find the selected plan using constants
-  const selectedCategory = gameCategories.find((catagory) => (catagory.name === incatagory));
-  const plans = selectedCategory && typeof selectedCategory === 'object' && 'plans' in selectedCategory ? selectedCategory.plans : [];
-  const plan = plans.find((p) => p.code === planCode || p.code === Pcode);
+  // Find the selected plan
+  const selectedCategory = gameCategories.find(category => category.name === incatagory);
+  const plans = selectedCategory && 'plans' in selectedCategory ? selectedCategory.plans : [];
+  const plan = plans.find(p => p.code === planCode);
 
+  // Calculate final price whenever plan or discount changes
   useEffect(() => {
     if (plan) {
       const basePrice = plan.priceRs;
-      if (appliedDiscount > 0) {
+      if (appliedDiscount > 0 && basePrice < 500) {
         const discountAmount = basePrice * (appliedDiscount / 100);
         setFinalPrice(basePrice - discountAmount);
       } else {
         setFinalPrice(basePrice);
       }
     }
-  }, [plan, appliedDiscount]);  const handleApplyPromoCode = async () => {
+  }, [plan, appliedDiscount]);
+
+  const handleApplyPromoCode = async () => {
     if (!promoCodeInput.trim()) {
       setFeedbackMessage({
         type: 'error',
@@ -57,7 +60,7 @@ function BillingPage() {
     if (plan.priceRs >= 500) {
       setFeedbackMessage({
         type: 'error',
-        text: 'Promo codes cannot be applied to plans costing ₹500 or more',
+        text: 'Our 20% OFF promotion cannot be applied to plans costing ₹500 or more',
       });
       return;
     }
@@ -83,9 +86,12 @@ function BillingPage() {
           promo: promoCodeInput,
           email: userEmail
         }),
-      });      if (response.status === 200) {
+      });
+
+      if (response.status === 200) {
         const data = await response.json();
-        setAppliedDiscount(data.discountPercent);
+        const discountPercent = data.discountPercent || 20;
+        setAppliedDiscount(discountPercent);
         
         // If the plan name matches one of the redirect URL keys
         const redirectKey = plan.name.replace(/\s+/g, ' ');
@@ -97,7 +103,7 @@ function BillingPage() {
         
         setFeedbackMessage({
           type: 'success',
-          text: `Success! ${data.discountPercent}% discount applied.`,
+          text: `Success! ${discountPercent}% OFF promotion applied.`,
         });
       } else if (response.status === 400) {
         setAppliedDiscount(0);
@@ -140,26 +146,34 @@ function BillingPage() {
       setIsLoading(false);
     }
   };
-  const { isSignedIn, user, isLoaded } = useUser();
 
+  // Loading state
   if (!isLoaded) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-100 to-primary-300">
-        <div className="p-10 bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-primary-200">
-          <div className="w-16 h-16 border-4 border-primary-600 border-t-transparent rounded-full animate-spin mb-4"></div>
-          <div className="text-2xl font-semibold text-primary-800 animate-pulse">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary-dark dark:from-primary-dark dark:to-accent-dark">
+        <div className="glass p-10 rounded-xl" style={{ boxShadow: 'var(--shadow-xl)' }}>
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
+          <div className="text-2xl font-bold text-primary-foreground text-center animate-pulse">Loading your order details...</div>
         </div>
       </div>
     );
   }
 
+  // Not signed in state
   if (!isSignedIn) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-100 to-primary-300">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-light to-primary dark:from-primary-dark dark:to-accent-dark">
         <Header />
-        <main className="flex-1 flex items-center justify-center">
-          <div className="text-center p-10 bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-primary-200">
-            <p className="text-2xl font-semibold text-primary-800">Please sign in to access this page</p>
+        <main className="flex-1 flex items-center justify-center p-4">
+          <div className="glass p-10 rounded-xl max-w-lg w-full text-center animate-slide-up" style={{ boxShadow: 'var(--shadow-xl)' }}>
+            <svg className="w-16 h-16 mx-auto mb-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 className="text-3xl font-bold text-gradient mb-4">Authentication Required</h2>
+            <p className="text-lg text-foreground mb-6">Please sign in to access the billing page and complete your order.</p>
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground font-bold py-3 px-8 rounded-lg">
+              Sign In
+            </Button>
           </div>
         </main>
         <Footer />
@@ -167,15 +181,21 @@ function BillingPage() {
     );
   }
 
-  if (isLoaded && isSignedIn) {
-    
+  // Plan not found state
   if (!plan) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-100 to-primary-300">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-light to-primary dark:from-primary-dark dark:to-accent-dark">
         <Header />
-        <main className="flex-1 flex items-center justify-center">
-          <div className="text-center p-10 bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-primary-200">
-            <p className="text-2xl font-semibold text-primary-800">Plan not found. Please go back and select a valid plan.</p>
+        <main className="flex-1 flex items-center justify-center p-4">
+          <div className="glass p-10 rounded-xl max-w-lg w-full text-center animate-slide-up" style={{ boxShadow: 'var(--shadow-xl)' }}>
+            <svg className="w-16 h-16 mx-auto mb-6 text-accent-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <h2 className="text-3xl font-bold text-gradient mb-4">Plan Not Found</h2>
+            <p className="text-lg text-foreground mb-6">We couldn't find the plan you're looking for. Please go back and select a valid plan.</p>
+            <Button onClick={() => window.history.back()} className="bg-primary hover:bg-primary-dark text-primary-foreground font-bold py-3 px-8 rounded-lg">
+              Return to Plans
+            </Button>
           </div>
         </main>
         <Footer />
@@ -183,147 +203,193 @@ function BillingPage() {
     );
   }
 
-  const total =plan.priceRs;
-
+  // Main billing page
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-100 to-primary-300">
+    <div className="min-h-screen flex flex-col bg-background dark:bg-card">
       <Header />
-      <main className="flex-1 flex flex-col items-center justify-center py-12 px-4">
-        <div className="w-full max-w-6xl bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-[1.01] border border-primary-200">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            <div className="p-8 md:p-12 bg-gradient-to-br from-primary-50 to-primary-100 flex flex-col justify-between border-b md:border-b-0 md:border-r border-primary-200">
-              <div>
-                <h2 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">{plan.name}</h2>
-                <h3 className="text-2xl font-semibold text-primary-800 mb-6">Features:</h3>
-                <ul className="space-y-4 text-primary-700 text-lg">
-                  {plan.features && plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg className="w-6 h-6 text-accent-500 mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      
+      <main className="flex-1 py-12 px-4 max-w-7xl mx-auto w-full animate-fade-in">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gradient mb-2">Complete Your Order</h1>
+          <p className="text-muted-foreground">You're just a few steps away from setting up your Minecraft server.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column - Order Summary */}
+          <div className="lg:col-span-2">
+            <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gradient">Order Summary</h2>
+                <span className="px-3 py-1 bg-primary text-primary-foreground text-sm font-medium rounded-full">
+                  {incatagory} Server
+                </span>
               </div>
-            </div>
-            <div className="p-8 md:p-12 flex flex-col justify-between bg-white">
-              <div>
-                <h3 className="text-3xl font-bold text-primary-900 mb-8 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text">Your Bill Summary</h3>
-                
-                {/* Promo Code Banner */}
-                <div className="mb-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
-                  <div className="flex items-center">
-                    <svg className="h-5 w-5 text-yellow-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                    </svg>
-                    <p className="text-yellow-700 font-medium">Promo codes are only applicable on orders below ₹500.</p>
+              
+              <div className="flex flex-col md:flex-row gap-6">
+                {/* Plan Info */}
+                <div className="flex-1">
+                  <div className="bg-accent/30 dark:bg-accent/10 rounded-lg p-5">
+                    <h3 className="text-xl font-bold mb-4 text-card-foreground">{plan.name}</h3>
+                    
+                    <div className="space-y-4">
+                      <ul className="space-y-3">
+                        {plan.features && plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <svg className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                            <span className="text-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 
-                <div className="space-y-6 text-lg">
-                  <div className="flex justify-between items-center bg-primary-50 p-4 rounded-xl border border-primary-200">
-                    <span className="text-primary-700 font-medium">Price:</span>
-                    <span className="text-2xl font-bold text-accent-600">₹{plan.priceRs}</span>
-                  </div>                  {/* Promo Code Section */}
-                  <div className="mt-4">
-                    <label htmlFor="promo" className="block text-sm font-medium mb-1 text-primary-800">
-                      Promo Code
-                    </label>
-                    <div className="flex items-center space-x-2">
-                      <input
-                        id="promo"
-                        placeholder="Enter your code"
-                        value={promoCodeInput}
-                        onChange={(e) => setPromoCodeInput(e.target.value.toUpperCase())}
-                        className={`w-full px-4 py-2 border text-black rounded-lg transition-all duration-300 ${
-                          feedbackMessage.type === 'success' 
-                          ? 'border-green-500 bg-green-50' 
-                          : feedbackMessage.type === 'error'
-                          ? 'border-red-500 bg-red-50'
-                          : 'border-primary-300'
-                        }`}
-                        disabled={isLoading}
-                      />
-                      <button 
-                        onClick={handleApplyPromoCode} 
-                        className={`text-white font-bold py-2 px-4 rounded-lg transition-all ${
-                          isLoading 
-                          ? 'bg-gray-400 cursor-not-allowed' 
-                          : 'bg-accent-500 hover:bg-accent-600'
-                        }`}
-                        disabled={isLoading}
-                      >
-                        {isLoading ? (
-                          <div className="flex items-center">
-                            <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                            <span>Applying</span>
-                          </div>
-                        ) : "Apply"}
-                      </button>
+                {/* Pricing Info */}
+                <div className="flex-1">
+                  <div className="bg-card rounded-lg border border-border p-5 shadow-sm">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-foreground">Base Price:</span>
+                      <span className="text-xl font-bold">₹{plan.priceRs.toFixed(2)}</span>
                     </div>
                     
-                    {feedbackMessage.text && (
-                      <div className={`mt-3 p-3 rounded-lg ${
-                        feedbackMessage.type === 'error' 
-                        ? 'bg-red-100 border border-red-300' 
-                        : 'bg-green-100 border border-green-300'
-                      }`}>
-                        <div className="flex items-center">
-                          {feedbackMessage.type === 'error' ? (
-                            <svg className="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                              {feedbackMessage.text.includes('already used') ? (
-                                // Info icon for "already used" case
-                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                              ) : (
-                                // Error icon for other errors
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                              )}
-                            </svg>
-                          ) : (
-                            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    {/* Eligibility Badge */}
+                    <div className={`mb-4 p-3 rounded-md ${
+                      plan.priceRs < 500 
+                        ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800' 
+                        : 'bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800'
+                    }`}>
+                      <div className="flex items-center">
+                        {plan.priceRs < 500 ? (
+                          <>
+                            <svg className="w-5 h-5 text-green-600 dark:text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                             </svg>
-                          )}
-                          <p className={`text-sm font-medium ${
-                            feedbackMessage.type === 'error' ? 'text-red-700' : 'text-green-700'
-                          }`}>
-                            {feedbackMessage.text}
-                          </p>
+                            <p className="text-sm font-medium text-green-800 dark:text-green-300">
+                              Eligible for 20% OFF promotion
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-5 h-5 text-amber-600 dark:text-amber-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            <p className="text-sm font-medium text-amber-800 dark:text-amber-300">
+                              Not eligible for 20% OFF promotion (₹500+ plans)
+                            </p>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                    
+                    {/* Discount Section */}
+                    {appliedDiscount > 0 && (
+                      <div className="mb-4 pt-4 border-t border-border">
+                        <div className="flex justify-between text-foreground mb-2">
+                          <span>Subtotal:</span>
+                          <span>₹{plan.priceRs.toFixed(2)}</span>
                         </div>
+                        <div className="flex justify-between text-green-600 dark:text-green-400 font-medium">
+                          <span>Discount ({appliedDiscount}%):</span>
+                          <span>-₹{(plan.priceRs * (appliedDiscount / 100)).toFixed(2)}</span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Total */}
+                    <div className="flex justify-between items-center mt-4 pt-4 border-t border-border">
+                      <span className="text-lg font-semibold text-foreground">Total Amount:</span>
+                      <div className="text-2xl font-extrabold text-primary">₹{finalPrice.toFixed(2)}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Column - Payment Section */}
+          <div className="lg:col-span-1">
+            <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+              <h2 className="text-2xl font-bold text-gradient mb-6">Payment</h2>
+              
+              {/* Promo Code Section */}
+              <div className="mb-6">
+                <label htmlFor="promo" className="block text-sm font-medium mb-2 text-foreground">
+                  Have a promo code?
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    id="promo"
+                    type="text"
+                    placeholder="Enter code"
+                    value={promoCodeInput}
+                    onChange={(e) => setPromoCodeInput(e.target.value.toUpperCase())}
+                    className={`w-full px-4 py-2 rounded-md border ${
+                      feedbackMessage.type === 'success' 
+                      ? 'border-green-500 bg-green-50 dark:bg-green-900/20 text-foreground' 
+                      : feedbackMessage.type === 'error'
+                      ? 'border-destructive bg-destructive/10 text-foreground'
+                      : 'border-input bg-background text-foreground'
+                    }`}
+                    disabled={isLoading || appliedDiscount > 0}
+                  />
+                  <Button
+                    onClick={handleApplyPromoCode}
+                    disabled={isLoading || appliedDiscount > 0}
+                    className={`whitespace-nowrap ${
+                      appliedDiscount > 0 
+                      ? 'bg-green-600 hover:bg-green-700' 
+                      : 'bg-primary hover:bg-primary-dark'
+                    }`}
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                        <span>Applying</span>
+                      </>
+                    ) : appliedDiscount > 0 ? "Applied" : "Apply Code"}
+                  </Button>
+                </div>
+                
+                {/* Feedback Messages */}
+                {feedbackMessage.text && (
+                  <div className={`mt-3 p-3 rounded-md ${
+                    feedbackMessage.type === 'error' 
+                    ? 'bg-destructive/10 border border-destructive/30' 
+                    : 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800'
+                  }`}>
+                    <div className="flex items-start">
+                      {feedbackMessage.type === 'error' ? (
+                        <svg className="w-5 h-5 text-destructive mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5 text-green-600 dark:text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                      <div>
+                        <p className={`text-sm font-medium ${
+                          feedbackMessage.type === 'error' ? 'text-destructive' : 'text-green-700 dark:text-green-300'
+                        }`}>
+                          {feedbackMessage.text}
+                        </p>
                         
                         {feedbackMessage.text.includes('already used') && (
-                          <p className="text-sm text-red-600 mt-2 pl-7">
-                            Each promo code can only be used once per account. Please try a different code.
+                          <p className="text-xs text-destructive/80 mt-1">
+                            Each promo code can only be used once per account.
                           </p>
                         )}
                       </div>
-                    )}
-                  </div>
-
-                  {appliedDiscount > 0 && (
-                    <div className="mt-4 border-t pt-4 border-primary-200">
-                      <div className="flex justify-between text-primary-700">
-                        <span>Subtotal</span>
-                        <span>₹{plan.priceRs.toFixed(2)}</span>
-                      </div>
-                      <div className="flex justify-between text-green-500">
-                        <span>Discount ({appliedDiscount}%)</span>
-                        <span>
-                          -₹
-                          {(plan.priceRs * (appliedDiscount / 100)).toFixed(2)}
-                        </span>
-                      </div>
                     </div>
-                  )}
-
-                  <div className="flex justify-between items-center bg-primary-100 p-6 rounded-xl border-2 border-primary-300">
-                    <span className="text-primary-800 font-bold text-xl">Total Amount:</span>
-                    <span className="text-3xl font-extrabold text-accent-600">₹{finalPrice.toFixed(2)}</span>
                   </div>
-                </div>
-              </div>              <div className="mt-10">
-                <button 
+                )}
+              </div>
+              
+              {/* Payment Button */}
+              <div className="space-y-4">
+                <Button 
                   onClick={() => {
                     const finalRedirect = promoRedirectUrl || (plan && plan.redirect);
                     if (finalRedirect) {
@@ -331,26 +397,58 @@ function BillingPage() {
                     }
                   }} 
                   disabled={isLoading}
-                  className={`w-full bg-accent-500 hover:bg-accent-600 text-white font-extrabold py-5 rounded-xl transition-all duration-300 shadow-lg transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-accent-500 focus:ring-opacity-50 text-xl ${
-                    isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                  }`}
+                  className="w-full py-6 text-lg font-bold bg-primary hover:bg-primary-dark"
                 >
-                  {appliedDiscount > 0 ? `Pay ₹${finalPrice.toFixed(2)} with Card / UPI` : 'Pay with Card / UPI'}
-                </button>
+                  {appliedDiscount > 0 ? `Pay ₹${finalPrice.toFixed(2)}` : 'Proceed to Payment'}
+                </Button>
+                
+                <div className="flex items-center justify-center space-x-2 text-muted-foreground text-sm">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Secured by Razorpay</span>
+                </div>
+                
                 {appliedDiscount > 0 && (
-                  <p className="text-center text-green-600 font-medium mt-2">
-                    Your discount has been applied!
-                  </p>
+                  <div className="text-center text-sm text-green-600 dark:text-green-400 font-medium">
+                    Your discount has been successfully applied!
+                  </div>
                 )}
+              </div>
+              
+              {/* Payment Methods */}
+              <div className="mt-8 pt-6 border-t border-border">
+                <p className="text-sm text-foreground mb-3">We accept:</p>
+                <div className="flex flex-wrap gap-2">
+                  <div className="bg-muted px-2 py-1 rounded text-xs">Credit Card</div>
+                  <div className="bg-muted px-2 py-1 rounded text-xs">Debit Card</div>
+                  <div className="bg-muted px-2 py-1 rounded text-xs">UPI</div>
+                  <div className="bg-muted px-2 py-1 rounded text-xs">Net Banking</div>
+                  <div className="bg-muted px-2 py-1 rounded text-xs">Wallets</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Support Info */}
+            <div className="mt-6 bg-accent/30 dark:bg-accent/10 rounded-xl p-4 shadow-md">
+              <div className="flex items-start">
+                <svg className="w-5 h-5 text-accent-foreground mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p className="text-sm text-foreground">Need help with your order?</p>
+                  <p className="text-xs text-muted-foreground mt-1">Contact us on Discord for assistance</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </main>
+      
       <Footer />
     </div>
   );
-}}
+}
 
 const DynamicBillingPage = dynamic(() => Promise.resolve(BillingPage), {
   ssr: false,

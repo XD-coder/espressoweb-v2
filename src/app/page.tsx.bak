@@ -8,13 +8,13 @@ import StickyAnnouncement from '../components/StickyAnnouncement';
 import Testimonials from '../components/Testimonials';
 import Stats from '../components/Stats';
 import GameServerComparison from '../components/GameServerComparison';
+import FloatingCTA from '../components/FloatingCTA';
 import ConversionBooster from '../components/ConversionBooster';
 import FloatingCTA from '../components/FloatingCTA';
-import { Metadata } from 'next';
-import Image from 'next/image';
+import ConversionBooster from '../components/ConversionBooster';
 
 // Metadata for this specific page
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Minecraft Server Hosting | Java & Modded | Espresso Hosting',
   description: 'High-performance Minecraft server hosting. Full control to upload your own JARs for Java Edition, Forge, Fabric, and any modded server. Get started with PaperMC by default.',
   keywords: 'minecraft server hosting, minecraft java server hosting, custom minecraft server, forge server hosting, modded minecraft server, paper mc server, cheap minecraft hosting, minecraft server plans, espresso hosting, minecraft java edition, upload custom jar',
@@ -42,28 +42,129 @@ export const metadata: Metadata = {
   }
 };
 
+// Enhanced Floating "Buy Now" button component with animation and urgency
+const FloatingCTA = () => {
+  return (
+    <motion.div 
+      className="fixed bottom-6 right-6 z-50"
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 3, duration: 0.5 }} // Delayed to appear after user explores a bit
+    >
+      <motion.div
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <a 
+          href="#plans" 
+          className="bg-gradient-to-r from-accent to-accent-light hover:from-accent-dark hover:to-accent text-white py-3.5 px-6 rounded-full shadow-xl flex items-center gap-2 font-bold border border-white/20 relative overflow-hidden group"
+        >
+          {/* Animated shine effect */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div 
+              className="absolute inset-0 bg-white opacity-0 -translate-x-full"
+              animate={{ translateX: ['100%', '-100%'], opacity: [0, 0.2, 0] }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity, 
+                repeatDelay: 3,
+                ease: "easeInOut" 
+              }}
+            />
+          </div>
+          
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span>GET 30% OFF NOW</span>
+        </a>
+      </motion.div>
+      
+      {/* Timer indicator */}
+      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-foreground text-background text-xs font-mono py-1 px-3 rounded-t-lg shadow-lg">
+        Offer ends: 23:59:41
+      </div>
+    </motion.div>
+  );
+};
+
+// Testimonials has been moved to a separate component file
+      </div>
+    </section>
+  );
+};
+
+// Stats has been moved to a separate component file
+
+// GameServerComparison has been moved to a separate component file
+
+// StickyAnnouncement has been moved to a separate component file
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow relative">
+      <Header />      <main className="flex-grow relative">
         <Hero />
         <StickyAnnouncement />
         <Plans />
-        <Testimonials />
-        <Stats />
+        <Testimonials />        <Stats />
         <GameServerComparison />
         <Features id="features" />
         <Founders />
-        <ConversionBooster />
         
-        {/* SEO-optimized sections */}
-        <section className="py-10 px-4 max-w-6xl mx-auto">
+        {/* Conversion Booster Section - Final Pitch */}
+        <section className="py-12 bg-gradient-to-r from-primary/10 to-accent/10 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-repeat opacity-5"></div>
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <div className="bg-card border border-border rounded-xl shadow-xl p-6 md:p-10 max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div className="md:w-1/3">
+                  <div className="relative w-full aspect-square max-w-[250px] mx-auto">
+                    <div className="absolute inset-0 bg-accent opacity-20 rounded-full blur-2xl"></div>
+                    <div className="relative z-10 bg-accent/20 rounded-full w-full h-full flex flex-col items-center justify-center transform -rotate-12">
+                      <div className="text-5xl md:text-6xl font-black text-accent">30%</div>
+                      <div className="text-xl md:text-2xl font-black text-accent">OFF</div>
+                      <div className="text-sm font-medium text-accent mt-1">Limited Time</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-2/3 text-center md:text-left">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Ready to Start Your Minecraft Adventure?</h2>
+                  <p className="text-foreground/80 mb-6">
+                    Join thousands of satisfied players today. Our servers are ready to go, with instant setup and 24/7 support. Don't miss the limited-time offer!
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <motion.a 
+                      href="#plans"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-accent text-white px-6 py-3 rounded-lg font-bold shadow-lg flex items-center justify-center gap-2 group"
+                    >
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      <span>GET YOUR SERVER NOW</span>
+                    </motion.a>
+                    <a href="#features" className="border-2 border-primary hover:bg-primary/10 text-primary px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2">
+                      <span>Learn More</span>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Additional SEO-optimized content */}
+        <section className="py-10 px-4 max-w-6xl mx-auto text-white">
           <h2 className="text-3xl font-bold mb-6 text-center">Why Choose Espresso Hosting for Your Minecraft Server?</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-3">Premium Performance</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 Our servers are powered by high-performance hardware with NVMe SSDs, ensuring that your Minecraft 
                 experience is smooth and lag-free. We optimize our hardware specifically for Minecraft workloads, 
                 delivering exceptional TPS (ticks per second) even under high load.
@@ -71,21 +172,21 @@ export default function Home() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-3">24/7 Support</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 Our dedicated support team is available around the clock to assist with any issues. 
                 Whether you need help with plugin installation, server configuration, or troubleshooting, 
                 our knowledgeable staff is just a message away.
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Seamless Payments</h3>
-              <p className="text-foreground/80">
+              <h3 className="text-xl font-semibold mb-3">Seemless Payments</h3>
+              <p className="text-gray-300">
                 We use Razorpay for secure and convenient payments, supporting a variety of payment methods. Once your payment is complete, our automated system instantly delivers your Minecraft server, so you can start playing without any delay.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-3">DDoS Protection</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 Your server is protected by enterprise-grade DDoS protection, ensuring your gameplay remains 
                 uninterrupted. We utilize advanced mitigation techniques to defend against attacks of all sizes.
               </p>
@@ -93,18 +194,18 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Minecraft Server Hosting Types */}
-        <section className="py-12 px-4 max-w-6xl mx-auto bg-card/50 rounded-lg my-8">
+        {/* Minecraft Server Hosting Types - SEO optimized section */}
+        <section className="py-12 px-4 max-w-6xl mx-auto bg-primary-900 rounded-lg my-8 text-white">
           <h2 className="text-3xl font-bold mb-8 text-center">Minecraft Server Hosting Solutions</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800 p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-3">Java Edition Server Hosting</h3>
-              <p className="text-foreground/70 mb-4">
+              <p className="text-gray-300 mb-4">
                 Our optimized Minecraft Java Edition server hosting provides the perfect platform for your community. 
                 Our servers default to PaperMC for the best performance, but you can upload any server JAR you prefer.
               </p>
-              <ul className="list-disc pl-5 text-foreground/70 space-y-2">
+              <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Full support for plugin APIs like Spigot, Paper, and Purpur</li>
                 <li>Manually switch between any Minecraft version by uploading the JAR</li>
                 <li>Full file access via SFTP and our browser-based file manager</li>
@@ -112,12 +213,12 @@ export default function Home() {
               </ul>
             </div>
             
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800 p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-3">Forge Server Hosting</h3>
-              <p className="text-foreground/70 mb-4">
+              <p className="text-gray-300 mb-4">
                 Host your modded Minecraft server with our flexible Forge server hosting. We give you the freedom to upload any Forge version and modpack, giving you full control.
               </p>
-              <ul className="list-disc pl-5 text-foreground/70 space-y-2">
+              <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Install any modpack by uploading its server files</li>
                 <li>Optimized hardware for heavily modded environments</li>
                 <li>Full control to configure mods and server settings</li>
@@ -127,13 +228,13 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800 p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-3">Modded Minecraft Hosting</h3>
-              <p className="text-foreground/70 mb-4">
+              <p className="text-gray-300 mb-4">
                 Run any modded Minecraft server with ease. Our platform supports not just Forge but also Fabric, 
                 Quilt, and other mod loaders to give you maximum flexibility.
               </p>
-              <ul className="list-disc pl-5 text-foreground/70 space-y-2">
+              <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Support for custom modpacks and mod configurations</li>
                 <li>Compatible with CurseForge, Modrinth, and FTB modpacks</li>
                 <li>Automated backups to protect your modded world</li>
@@ -141,13 +242,13 @@ export default function Home() {
               </ul>
             </div>
             
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800 p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-3">Paper MC Server Hosting</h3>
-              <p className="text-foreground/70 mb-4">
+              <p className="text-gray-300 mb-4">
                 Get maximum performance with our Paper Minecraft server hosting. Paper offers significant 
                 optimizations over vanilla Minecraft while maintaining plugin compatibility.
               </p>
-              <ul className="list-disc pl-5 text-foreground/70 space-y-2">
+              <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Significantly improved TPS (ticks per second) compared to vanilla</li>
                 <li>Compatible with most Bukkit and Spigot plugins</li>
                 <li>Advanced configuration options for server optimization</li>
@@ -157,48 +258,47 @@ export default function Home() {
           </div>
         </section>
         
-        {/* FAQ Section */}
-        <section className="py-12 px-4 max-w-6xl mx-auto">
+        {/* FAQ Section - Highly optimized for search queries */}
+        <section className="py-12 px-4 max-w-6xl mx-auto text-white">
           <h2 className="text-3xl font-bold mb-10 text-center">Minecraft Server Hosting FAQ</h2>
           
           <div className="space-y-6">
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">How do I start my own Minecraft Java Edition server?</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 Starting your server is simple. Select a plan, complete checkout, and your server is instantly deployed with PaperMC by default. You can then use our control panel and file manager to upload any server JAR (like Forge or a specific Spigot version) and configure it to your liking. You have full control from the start.
               </p>
             </div>
             
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Which Minecraft server type is best for mods?</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 For modded Minecraft, Forge is the most popular choice. Our hosting platform is ideal for Forge as it gives you complete control. You can upload any Forge version and any modpack you want. We also fully support Fabric and other mod loaders—just upload the server files and run them.
               </p>
             </div>
             
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Can I run plugins on my Minecraft server?</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 Yes! Our servers default to PaperMC, which is highly optimized for plugins and supports most Spigot and Bukkit plugins. You can easily upload any plugins to the `plugins` folder using our file manager. If you choose to run a different server type like Spigot or Purpur, you can do that too.
               </p>
             </div>
             
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">How much RAM do I need for a modded Minecraft server?</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 For modded Minecraft servers, we recommend at least 4GB RAM for small to medium modpacks with a few players. Larger modpacks like FTB or All The Mods may require 6-8GB or more, especially with higher player counts. Our Americano plan is perfect for heavily modded servers, while our Latte plan works well for medium-sized modpacks. You can always upgrade your plan if you need more resources.
               </p>
             </div>
             
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-primary-800/50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Do you offer Minecraft Forge server hosting in India?</h3>
-              <p className="text-foreground/80">
+              <p className="text-gray-300">
                 Yes, we offer optimized Minecraft Forge server hosting with servers located in Mumbai, India. This provides low-latency connections for Indian players, making gameplay smooth and responsive. Our Indian Minecraft server hosting includes the same premium features as our global options, including mod support, 24/7 support, and our easy-to-use control panel.
               </p>
             </div>
           </div>
         </section>        
-        
         {/* Special offer before footer */}
         <section className="py-12 md:py-16 bg-gradient-to-r from-accent/10 to-primary/10 relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -207,16 +307,16 @@ export default function Home() {
                 <div className="md:w-1/3 flex justify-center">
                   <div className="relative w-40 h-40 bg-accent/20 rounded-full flex items-center justify-center">
                     <div className="absolute inset-0 bg-accent/20 rounded-full animate-ping opacity-50"></div>
-                    <div className="text-center">                      <div className="text-4xl font-bold text-accent">20%</div>
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-accent">30%</div>
                       <div className="font-medium text-accent">OFF</div>
-                      <div className="text-xs font-medium text-accent">orders up to ₹500</div>
                     </div>
                   </div>
                 </div>
                 <div className="md:w-2/3 text-center md:text-left">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Limited Time Special Offer!</h3>
                   <p className="text-foreground/80 mb-6">
-                    Get 20% off all hosting plans (orders up to ₹500) when you sign up today. Use code <span className="font-mono bg-primary/20 text-primary px-2 py-1 rounded">SUMMER25</span> at checkout.
+                    Get 30% off all hosting plans when you sign up today. Use code <span className="font-mono bg-primary/20 text-primary px-2 py-1 rounded">SUMMER25</span> at checkout.
                   </p>
                   <a 
                     href="#plans" 
