@@ -245,6 +245,14 @@ body {
   background: var(--primary-dark);
 }
 
+/* Text gradient utility class */
+.text-gradient {
+  background-image: linear-gradient(to right, var(--accent-foreground), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Glass effect utility classes */
 .glass {
   background: rgba(255, 255, 255, 0.1);
