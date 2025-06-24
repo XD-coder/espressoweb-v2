@@ -38,9 +38,13 @@ const itemVariants = {
   show: { opacity: 1, y: 0 }
 };
 
-const Features = () => {
+type FeaturesProps = {
+  id?: string;
+}
+
+const Features = ({ id }: FeaturesProps) => {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden">
+    <section id={id} className="py-20 md:py-28 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[url('/hero-bg.png')] opacity-5 dark:opacity-[0.03] bg-repeat"></div>
       

@@ -20,15 +20,6 @@ const Header = () => {
   };
   return (
     <header className="w-full bg-card/80 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-sm">
-      {/* Promotional Banner - Uncomment when needed */}
-      <motion.div
-        className="text-center py-2 text-sm bg-primary text-primary-foreground font-medium"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p>🎉 Limited Time Offer: Get 20% off on all plans! (Applied automatically at checkout) 🎉</p>
-      </motion.div>
 
       {/* Main Header */}
       <motion.nav

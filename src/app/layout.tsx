@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/providers";
+import { inter, lora, firaCode } from './fonts';
 
 export const metadata: Metadata = {
   title: "Espresso Hosting | minecraft servers",
@@ -47,14 +48,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {  return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${lora.variable} ${firaCode.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-      </head>      <body className="antialiased bg-background text-foreground transition-colors duration-300">
+      </head>
+      <body className="antialiased bg-background text-foreground transition-colors duration-300 overflow-x-hidden font-sans">
         <ThemeProvider>
           <ClerkProvider afterSignUpUrl="/panel-setup">
             <Analytics />
@@ -148,8 +147,7 @@ export default function RootLayout({
                 }
               ]
             })
-          }}
-        />
+          }}        />
       </body>
     </html>
   );

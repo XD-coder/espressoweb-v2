@@ -6,9 +6,13 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
+  ],  theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'],
+        serif: ['var(--font-lora)', 'serif'],
+        mono: ['var(--font-fira-code)', 'monospace'],
+      },
 
       colors: {
         primary: {
@@ -59,14 +63,8 @@ const config: Config = {
           600: 'var(--color-dark-600)',
           700: 'var(--color-dark-700)',
           800: 'var(--color-dark-800)',
-          900: 'var(--color-dark-900)',
-          950: 'var(--color-dark-950)',
+          900: 'var(--color-dark-900)',          950: 'var(--color-dark-950)',
         },
-      },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
-        mono: ['Fira Code', 'monospace'],
       },
       boxShadow: {
         glass: '0 4px 30px rgba(0, 0, 0, 0.1)',
