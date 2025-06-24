@@ -23,7 +23,7 @@ const Hero = () => {  return (    <section className="relative py-16 sm:py-20 md
             animate={{ scale: [1, 1.03, 1] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
           >
-            <span className="font-bold">⚡ FLASH SALE ENDS TODAY:</span> 20% OFF all plans (up to ₹500) + Free setup! Use code: <span className="font-bold bg-white/30 px-2 py-1 rounded ml-1 animate-pulse">SUMMER25</span>
+            <span className="font-bold">⚡ FLASH SALE ENDS TODAY:</span> 20% OFF all plans (orders up to ₹500) + Free setup! Use code: <span className="font-bold bg-white/30 px-2 py-1 rounded ml-1 animate-pulse">SUMMER25</span>
           </motion.p>
         </motion.div>
       </div>
@@ -101,7 +101,7 @@ const Hero = () => {  return (    <section className="relative py-16 sm:py-20 md
             {/* Headline - ENHANCED with stronger price focus */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6">
               <span className="relative inline-block">
-                <span className="absolute -top-6 -right-6 bg-accent text-white text-sm px-3 py-1 rounded-full font-bold transform rotate-12 animate-pulse">20% OFF (₹500 max)</span>
+                <span className="absolute -top-6 -right-6 bg-accent text-white text-sm px-3 py-1 rounded-full font-bold transform rotate-12 animate-pulse">20% OFF (orders up to ₹500)</span>
                 Premium <span className="text-gradient">Minecraft Server</span>
               </span> Hosting <br className="hidden lg:block" /><span className="text-accent">Starting at Just ₹200/mo *</span>
             </h1>
@@ -275,7 +275,7 @@ const Hero = () => {  return (    <section className="relative py-16 sm:py-20 md
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 <div className="relative">
-                  <span className="relative z-10">20% OFF (₹500 max)</span>
+                  <span className="relative z-10">20% OFF (orders up to ₹500)</span>
                   <div className="absolute inset-0 bg-white opacity-20 blur-sm rounded-full"></div>
                 </div>
               </motion.div>

@@ -2,52 +2,70 @@
 
 :root {
   /* Main colors */
-  --background: #f8faff;
-  --foreground: #172554;
-  --card: #ffffff;
-  --card-foreground: #172554;
-  --popover: #ffffff;
-  --popover-foreground: #172554;
+  --background: #FCFCFC;
+  --foreground: #222222;
+  --card: #FFFFFF;
+  --card-foreground: #222222;
+  --popover: #FFFFFF;
+  --popover-foreground: #222222;
   
-  /* Primary - Espresso theme */
-  --primary: #794024;
-  --primary-light: #9c5c3f;
-  --primary-dark: #562e1a;
-  --primary-foreground: #ffffff;
+  /* Primary - Theme */
+  --primary: #8B5CF6;
+  --primary-light: #A78BFA;
+  --primary-dark: #7C3AED;
+  --primary-foreground: #FFFFFF;
   
-  /* Secondary - Coffee cream */
-  --secondary: #e6d5c4;
-  --secondary-light: #f4eadf;
-  --secondary-dark: #c4b09c;
-  --secondary-foreground: #4b341f;
+  /* Secondary */
+  --secondary: #F3F4F6;
+  --secondary-light: #F9FAFB;
+  --secondary-dark: #E5E7EB;
+  --secondary-foreground: #4B5563;
   
-  /* Accent - Bean highlight */
-  --accent: #84cc16;
-  --accent-light: #a3e635;
-  --accent-dark: #65a30d;
-  --accent-foreground: #ffffff;
-  
+  /* Accent */
+  --accent: #EEF2FF;
+  --accent-light: #E0E7FF;
+  --accent-dark: #C7D2FE;
+  --accent-foreground: #4338CA;
   /* System colors */
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #f1f5f9;
-  --ring: #794024;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #8B5CF6;
+  
+  /* Chart colors */
+  --chart-1: #8B5CF6;
+  --chart-2: #7C3AED;
+  --chart-3: #6D28D9;
+  --chart-4: #5B21B6;
+  --chart-5: #4C1D95;
+  
+  /* Sidebar */
+  --sidebar: #f9fafb;
+  --sidebar-foreground: #262626;
+  --sidebar-primary: #f59e0b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fffbeb;
+  --sidebar-accent-foreground: #92400e;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #f59e0b;
   
   /* Shadows with modern styling */
-  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px rgb(0 0 0 / 0.06);
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+  --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -2px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 8px 10px -2px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
   
   /* Typography */
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Lora', Georgia, serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: Inter, sans-serif;
+  --font-serif: 'Source Serif 4', serif;
+  --font-mono: 'JetBrains Mono', monospace;
   
   /* Border radius */
   --radius-xs: 0.125rem;
@@ -61,39 +79,38 @@
 
 .dark {
   /* Main colors - Dark mode */
-  --background: #0f172a;
-  --foreground: #e2e8f0;
-  --card: #1e293b;
-  --card-foreground: #f1f5f9;
-  --popover: #1e293b;
-  --popover-foreground: #f1f5f9;
+  --background: #121212;
+  --foreground: #FCFCFC;
+  --card: #1E1E1E;
+  --card-foreground: #FCFCFC;
+  --popover: #1E1E1E;
+  --popover-foreground: #FCFCFC;
   
-  /* Primary - Espresso dark theme */
-  --primary: #c2703c;
-  --primary-light: #d68553;
-  --primary-dark: #a25932;
-  --primary-foreground: #ffffff;
+  /* Primary - Dark theme */
+  --primary: #A78BFA;
+  --primary-light: #C4B5FD;
+  --primary-dark: #8B5CF6;
+  --primary-foreground: #FFFFFF;
   
-  /* Secondary - Dark coffee cream */
-  --secondary: #64748b;
-  --secondary-light: #94a3b8;
-  --secondary-dark: #475569;
-  --secondary-foreground: #f8fafc;
+  /* Secondary - Dark theme */
+  --secondary: #333333;
+  --secondary-light: #444444;
+  --secondary-dark: #222222;
+  --secondary-foreground: #FCFCFC;
   
-  /* Accent - Bean highlight dark */
-  --accent: #84cc16;
-  --accent-light: #a3e635;
-  --accent-dark: #65a30d;
-  --accent-foreground: #0f172a;
-  
-  /* System colors - Dark mode */
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --destructive: #f87171;
-  --destructive-foreground: #0f172a;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: #c2703c;
+  /* Accent - Dark theme */
+  --accent: #312E81;
+  --accent-light: #3730A3;
+  --accent-dark: #27226B;
+  --accent-foreground: #E0E7FF;
+    /* System colors - Dark mode */
+  --muted: #1E1E1E;
+  --muted-foreground: #A1A1AA;
+  --destructive: #EF4444;
+  --destructive-foreground: #FEF2F2;
+  --border: #333333;
+  --input: #1E1E1E;
+  --ring: #A78BFA;
   
   /* Shadows with subtle styling for dark mode */
   --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.4);
@@ -104,7 +121,7 @@
   --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
 }
 
-@theme {
+@theme inline {
   /* Map CSS custom properties to Tailwind utility classes */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -129,8 +146,19 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-input: var(--input);  --color-ring: var(--ring);  --color-chart-1: var(--chart-1, #3b82f6);
+  --color-chart-2: var(--chart-2, #0ea5e9);
+  --color-chart-3: var(--chart-3, #6366f1);
+  --color-chart-4: var(--chart-4, #8b5cf6);
+  --color-chart-5: var(--chart-5, #2563eb);
+  --color-sidebar: var(--sidebar, #f8fafc);
+  --color-sidebar-foreground: var(--sidebar-foreground, #111827);
+  --color-sidebar-primary: var(--sidebar-primary, #2563eb);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground, #ffffff);
+  --color-sidebar-accent: var(--sidebar-accent, #22c55e);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground, #f0fdf4);
+  --color-sidebar-border: var(--sidebar-border, #e2e8f0);
+  --color-sidebar-ring: var(--sidebar-ring, #2563eb);
   
   /* Typography mapping */
   --font-sans: var(--font-sans);

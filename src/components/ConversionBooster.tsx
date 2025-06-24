@@ -14,7 +14,7 @@ const ConversionBooster = () => {
                 <div className="absolute inset-0 bg-accent opacity-20 rounded-full blur-2xl"></div>
                 <div className="relative z-10 bg-accent/20 rounded-full w-full h-full flex flex-col items-center justify-center transform -rotate-12">                  <div className="text-5xl md:text-6xl font-black text-accent">20%</div>
                   <div className="text-xl md:text-2xl font-black text-accent">OFF</div>
-                  <div className="text-xs font-medium text-accent mt-1">Up to ₹500 only</div>
+                  <div className="text-xs font-medium text-accent mt-1">Orders up to ₹500</div>
                 </div>
               </div>
             </div>

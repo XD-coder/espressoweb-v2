@@ -17,7 +17,7 @@ const StickyAnnouncement = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>          <p className="text-sm font-medium">
-            <span className="font-bold">LAST CHANCE:</span> Summer Sale ends today! Get <span className="font-bold underline">20% OFF</span> all plans (up to ₹500)
+            <span className="font-bold">LAST CHANCE:</span> Summer Sale ends today! Get <span className="font-bold underline">20% OFF</span> all plans (orders up to ₹500)
           </p>
         </div>
         <a 

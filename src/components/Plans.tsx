@@ -155,7 +155,7 @@ const Plans = () => {
             <svg className="w-4 h-4 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>LIMITED TIME SALE - ENDS TODAY - 20% OFF (UP TO ₹500)!</span>
+            <span>LIMITED TIME SALE - ENDS TODAY - 20% OFF (ORDERS UP TO ₹500)!</span>
           </motion.div>
           
           {/* Enhanced heading */}
@@ -176,7 +176,7 @@ const Plans = () => {
             <svg className="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
             </svg>
-            <span className="text-sm font-medium">7-Day Money-Back Guarantee</span>
+            <span className="text-sm font-medium">Seemless performance</span>
           </div>
           
           {/* Enhanced description */}
@@ -510,7 +510,7 @@ const Plans = () => {
                 <path d="M12 15V7"></path>
                 <path d="m9 11 3 4 3-4"></path>
               </svg>
-              <span>Satisfaction guaranteed or your money back</span>
+              <span>Satisfaction guaranteed</span>
             </div>
           </div>
         </motion.div>

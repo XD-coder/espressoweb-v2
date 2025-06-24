@@ -175,6 +175,16 @@ const Footer = () => {  return (
           </div>
         </div>
       </div>
+      <div className="flex justify-center mt-8">
+        <span className="text-xl font-bold" style={{
+          background: 'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text'
+        }}>
+          METAI   KI   MA   KI   CHUT KALI
+        </span>
+      </div>
     </footer>
   );
 };
