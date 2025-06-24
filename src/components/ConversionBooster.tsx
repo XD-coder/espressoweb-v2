@@ -12,10 +12,9 @@ const ConversionBooster = () => {
             <div className="md:w-1/3">
               <div className="relative w-full aspect-square max-w-[250px] mx-auto">
                 <div className="absolute inset-0 bg-accent opacity-20 rounded-full blur-2xl"></div>
-                <div className="relative z-10 bg-accent/20 rounded-full w-full h-full flex flex-col items-center justify-center transform -rotate-12">
-                  <div className="text-5xl md:text-6xl font-black text-accent">30%</div>
+                <div className="relative z-10 bg-accent/20 rounded-full w-full h-full flex flex-col items-center justify-center transform -rotate-12">                  <div className="text-5xl md:text-6xl font-black text-accent">20%</div>
                   <div className="text-xl md:text-2xl font-black text-accent">OFF</div>
-                  <div className="text-sm font-medium text-accent mt-1">Limited Time</div>
+                  <div className="text-xs font-medium text-accent mt-1">Up to ₹500 only</div>
                 </div>
               </div>
             </div>

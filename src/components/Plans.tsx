@@ -155,7 +155,7 @@ const Plans = () => {
             <svg className="w-4 h-4 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>LIMITED TIME SALE - ENDS TODAY - 30% OFF!</span>
+            <span>LIMITED TIME SALE - ENDS TODAY - 20% OFF (UP TO ₹500)!</span>
           </motion.div>
           
           {/* Enhanced heading */}

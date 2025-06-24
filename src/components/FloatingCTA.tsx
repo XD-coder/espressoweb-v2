@@ -16,10 +16,9 @@ const FloatingCTA = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
-        <span>GET STARTED - 30% OFF</span>
+        <span>GET STARTED - 20% OFF (₹500 MAX)</span>
       </motion.a>
     </motion.div>
   );

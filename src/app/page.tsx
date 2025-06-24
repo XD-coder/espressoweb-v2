@@ -207,16 +207,16 @@ export default function Home() {
                 <div className="md:w-1/3 flex justify-center">
                   <div className="relative w-40 h-40 bg-accent/20 rounded-full flex items-center justify-center">
                     <div className="absolute inset-0 bg-accent/20 rounded-full animate-ping opacity-50"></div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-accent">30%</div>
+                    <div className="text-center">                      <div className="text-4xl font-bold text-accent">20%</div>
                       <div className="font-medium text-accent">OFF</div>
+                      <div className="text-xs font-medium text-accent">up to ₹500</div>
                     </div>
                   </div>
                 </div>
                 <div className="md:w-2/3 text-center md:text-left">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Limited Time Special Offer!</h3>
                   <p className="text-foreground/80 mb-6">
-                    Get 30% off all hosting plans when you sign up today. Use code <span className="font-mono bg-primary/20 text-primary px-2 py-1 rounded">SUMMER25</span> at checkout.
+                    Get 20% off all hosting plans (up to ₹500) when you sign up today. Use code <span className="font-mono bg-primary/20 text-primary px-2 py-1 rounded">SUMMER25</span> at checkout.
                   </p>
                   <a 
                     href="#plans" 

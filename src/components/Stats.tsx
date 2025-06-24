@@ -55,7 +55,7 @@ const Stats = () => {
                   animate={{ opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  50,000+
+                  800+
                 </motion.p>
               </div>
               <p className="text-sm text-white/80">Happy Players</p>
@@ -113,7 +113,7 @@ const Stats = () => {
                   animate={{ opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                 >
-                  12,000+
+                  200+
                 </motion.p>
               </div>
               <p className="text-sm text-white/80">Servers Deployed</p>
