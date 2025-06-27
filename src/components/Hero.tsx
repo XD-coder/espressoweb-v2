@@ -97,7 +97,7 @@ const Hero = () => {  return (    <section className="relative py-10 sm:py-16 md
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6">
               <span className="relative inline-block">
                 {/* Discount badge hidden on mobile, visible on larger screens */}
-                <span className="absolute top-0 right-0 sm:-top-6 sm:-right-6 bg-accent text-white text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 rounded-full font-bold transform sm:rotate-12 animate-pulse hidden sm:inline-block">20% OFF (orders up to ₹500)</span>
+                
                 Premium <span className="text-gradient">Minecraft Server</span>
               </span> Hosting <br className="hidden lg:block" /><span className="text-accent">Starting at Just ₹200/mo *</span>
             </h1>

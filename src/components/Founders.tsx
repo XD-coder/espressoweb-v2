@@ -161,20 +161,7 @@ const Founders = () => {
                   {founder.description}
                 </p>
                 
-                {/* Social links */}
-                <div className="flex gap-4 mt-auto">
-                  {socialIcons.map((social, i) => (
-                    <motion.button
-                      key={i}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.95 }}
-                      aria-label={social.ariaLabel}
-                      className="w-9 h-9 flex items-center justify-center rounded-full border border-[theme(--border)] bg-[theme(--card)] text-[theme(--muted-foreground)] hover:text-[theme(--primary)] hover:border-[theme(--primary-light)] transition-colors"
-                    >
-                      <social.Icon className="h-4 w-4" />
-                    </motion.button>
-                  ))}
-                </div>
+                
               </motion.div>
             );
           })}
