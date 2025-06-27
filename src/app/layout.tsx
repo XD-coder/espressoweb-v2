@@ -47,15 +47,15 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {  return (    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${lora.variable} ${firaCode.variable}`}>
+}>) {  return (    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${lora.variable} ${firaCode.variable} w-full h-full`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className="antialiased bg-background text-foreground transition-colors duration-300 overflow-x-hidden font-sans">
+      <body className="antialiased bg-background text-foreground transition-colors duration-300 overflow-x-hidden font-sans w-full max-w-full min-h-screen">
         <ThemeProvider>
-          <ClerkProvider afterSignUpUrl="/panel-setup">
+          <ClerkProvider>
             <Analytics />
             {children}
           </ClerkProvider>
@@ -78,7 +78,6 @@ export default function RootLayout({
               },
               "sameAs": [
                 "https://discord.gg/espressohosting", 
-                "https://twitter.com/espressohosting"
               ]
             })
           }}

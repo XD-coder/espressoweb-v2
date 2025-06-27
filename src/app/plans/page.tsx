@@ -7,6 +7,8 @@ import { Check, Coffee, CoffeeIcon, Gift, PackageCheck, ShieldCheck, Cpu, Wifi, 
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import TrialModal from '../../components/TrialModal';
 
 // Feature icon mapping
 const featureIcons: Record<string, React.ElementType> = {
@@ -70,6 +72,7 @@ const planVariants = {
 
 const PlansPage = () => {
   const router = useRouter();
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -300,7 +303,7 @@ const PlansPage = () => {
                           whileTap={{ scale: 0.97 }}
                           onClick={() => {
                             if (plan.isTrial) {
-                              // Handle trial signup - you might want to add the modal here
+                              setIsTrialModalOpen(true);
                             } else {
                               router.push(`/billing?plancode=${plan.code}&catagory=${category.name}`);
                             }
@@ -357,6 +360,12 @@ const PlansPage = () => {
               </div>
             ))}
           </div>
+          {/* Trial Modal */}
+                <TrialModal 
+                  isOpen={isTrialModalOpen} 
+                  onClose={() => setIsTrialModalOpen(false)} 
+                  planName="On the House"
+                />
         </section>
       </main>
       <Footer />

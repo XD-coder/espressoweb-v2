@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
+
 const MakingPanel = () => {
   const router = useRouter();
 
@@ -13,6 +14,10 @@ const MakingPanel = () => {
 
     return () => clearTimeout(timer);
   }, [router]);
+
+const password = () => {
+  const pass = fetch('https://espressohost.xyz')
+}
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-primary-100 to-primary-300">

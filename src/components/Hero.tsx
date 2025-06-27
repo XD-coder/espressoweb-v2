@@ -287,20 +287,7 @@ const Hero = () => {  return (    <section className="relative py-10 sm:py-16 md
                     className="rounded-[var(--radius-lg)] shadow-[var(--shadow-lg)] border border-primary/20 transform -rotate-2 transition-all duration-500 hover:rotate-0 object-cover"
                   />
                   
-                  {/* Interactive elements overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.a 
-                      href="#plans"
-                      className="bg-black/70 text-white px-6 py-3 rounded-full backdrop-blur-sm flex items-center gap-2 hover:bg-accent transition-all duration-300 shadow-lg"
-                      whileHover={{ scale: 1.05, backgroundColor: "rgba(239, 68, 68, 0.9)" }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                      <span className="font-bold">Claim Your Server Now</span>
-                    </motion.a>
-                  </div>
+                  
                     {/* Price comparison badge - simplified for mobile */}
                   <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-4 bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 shadow-lg border border-border">
                     <div className="text-[10px] sm:text-xs font-medium">

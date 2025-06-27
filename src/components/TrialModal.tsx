@@ -105,7 +105,7 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
           </h3>
           
           <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base max-w-sm mx-auto">
-            Your free server has been provisioned. You'll receive an email with login details shortly.
+            Your free server has been provisioned. You can login to the panel using your username and password received on your registered email.
           </p>
           
           <motion.button
@@ -188,7 +188,7 @@ export default function TrialModal({ isOpen, onClose, planName }: TrialModalProp
           </div>
           
           <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base">
-            You're about to claim a 1-month free trial of our {planName} hosting plan. This includes 2GB RAM, 4GB storage, and all features of our paid plans.
+            You're about to claim a 1-week free trial of our {planName} hosting plan. This includes 2GB RAM, 4GB storage, and all features of our paid plans.
           </p>
           
           <div className="mb-6 sm:mb-8">

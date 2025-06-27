@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const FloatingCTA = () => {
   return (
     <motion.div
-      className="fixed bottom-5 right-5 z-50"
+      className="fixed bottom-5 right-5 z-50 hidden md:block" /* Hide on mobile, show on md breakpoint and up */
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2, type: "spring", stiffness: 100 }}

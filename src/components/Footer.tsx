@@ -182,7 +182,7 @@ const Footer = () => {  return (
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text'
         }}>
-          METAI   KI   MA   KI   CHUT KALI
+          {/* METAI   KI   MA   KI   CHUT KALI */}
         </span>
       </div>
     </footer>
